@@ -4,6 +4,6 @@ interface NavLinkProps extends ComponentProps<"a"> {}
 
 export const NavLink = (props: NavLinkProps) => {
   return (
-    <a {...props} className="font-medium text-sm">{props.children}</a>
+    <a {...props} className="font-semibold text-xl">{props.children}</a>
   )
 }
