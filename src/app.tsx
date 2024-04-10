@@ -1,9 +1,11 @@
 import { Header } from "./components/header"
+import { Home } from "./components/home"
 
 export const App = () => {
   return (
-    <div>
+    <>
       <Header />
-    </div>
+      <Home />
+    </>
   )
 }
