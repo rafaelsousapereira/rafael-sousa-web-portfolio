@@ -6,7 +6,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: ['"Inter var", sans-serif']
+      sans: ['"Mulish", sans-serif']
     },
     extend: {},
   },
