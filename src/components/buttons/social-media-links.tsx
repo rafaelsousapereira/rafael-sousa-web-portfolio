@@ -1,5 +1,5 @@
 import { Github, Linkedin } from "lucide-react"
-import { NavLink } from "../nav-link"
+import { NavLink } from "./nav-link"
 import { ComponentProps } from "react"
 
 interface SocialMediaLinkProps extends ComponentProps<"nav"> {}

@@ -1,5 +1,5 @@
 import logoSiteIcon from "../assets/logo-site-icon.png"
-import { NavLink } from "./nav-link"
+import { NavLink } from "./buttons/nav-link"
 
 export const Header = () => {
   return (
