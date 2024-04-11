@@ -1,6 +1,5 @@
-import { Github, Linkedin } from "lucide-react"
-import { NavLink } from "./nav-link"
 import { ButtonGroup } from "./buttons/button-group"
+import { SocialMediaLink } from "./buttons/social-media-links"
 
 export const Home = () => {
   return (
@@ -19,15 +18,8 @@ export const Home = () => {
         </nav>
       </div>
 
-      <div className="absolute bottom-0 mx-9 my-9">
-        <nav className="flex gap-3">
-          <NavLink href="/linkedin">
-            <Linkedin />
-          </NavLink>
-          <NavLink href="/github">
-            <Github />
-          </NavLink>
-        </nav>
+      <div className="fixed bottom-0 right-0 mx-10 my-9">
+        <SocialMediaLink />
       </div>
     </>
   )
