@@ -1,5 +1,4 @@
 import { ButtonGroup } from "./buttons/button-group"
-import { SocialMediaLink } from "./buttons/social-media-links"
 
 export const Home = () => {
   return (
@@ -16,10 +15,6 @@ export const Home = () => {
         <nav className="flex gap-3">
           <ButtonGroup>Baixe meu CV</ButtonGroup>
         </nav>
-      </div>
-
-      <div className="fixed bottom-0 right-0 mx-10 my-9">
-        <SocialMediaLink />
       </div>
     </>
   )
