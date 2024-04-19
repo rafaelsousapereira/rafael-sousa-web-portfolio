@@ -1,15 +1,11 @@
+import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import logoIcon from "../assets/logo-site-icon.png"
-import { NavLink } from "./buttons/nav-link"
-import { useState } from "react"
+import { NavBar } from "./navbar"
 
 export const Header = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const navLink = [
-    { href: "#about-us", label: "Sobre" },
-  ]
 
   return (
     <>
@@ -24,14 +20,8 @@ export const Header = () => {
               alt="Logo letra R minúscula azul e fundo roxo" 
             />
 
-            <ul className="flex max-lg:hidden">
-              {navLink.map((item) => (
-                <li key={item.href}>
-                  <NavLink href={item.href}>{item.label}</NavLink>
-                </li>
-              ))}
-            </ul>
-
+            <NavBar className="flex max-lg:hidden" />
+            
             <div className="hidden max-lg:block cursor-pointer" 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -51,14 +41,8 @@ export const Header = () => {
           >
             <X className="text-4xl mr-3" />
           </div>
-            
-          <ul className="lg:hidden flex flex-col items-center justify-center h-full">
-            {navLink.map((item) => (
-              <li key={item.href}>
-                <NavLink href={item.href}>{item.label}</NavLink>
-              </li>
-            ))}
-          </ul>
+
+          <NavBar className="lg:hidden flex flex-col items-center justify-center h-full" />
         </nav>
       )}
     </>
