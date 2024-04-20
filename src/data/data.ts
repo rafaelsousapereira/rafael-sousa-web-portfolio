@@ -21,7 +21,7 @@ export const metadata: MetadataType = {
     name: 'Rafael',
     sirName: 'Sousa Pereira',
     position: 'Desenvolvedor Web Full Stack',
-    image: './.github/avatar.png'
+    image: '.github/avatar.png'
   },
   description: {
     greeting: 'Bem-vindos ao meu portfólio!'
