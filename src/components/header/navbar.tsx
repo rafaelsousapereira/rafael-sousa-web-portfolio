@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import { NavLink } from "./buttons/nav-link";
+import { NavLink } from "../buttons/nav-link";
 
 interface NavBarProps extends ComponentProps<"ul"> {}
 

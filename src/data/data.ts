@@ -3,6 +3,7 @@ type MetadataType = {
     name: string
     sirName: string
     position: string
+    image: string
   },
   description: {
     greeting: string
@@ -20,6 +21,7 @@ export const metadata: MetadataType = {
     name: 'Rafael',
     sirName: 'Sousa Pereira',
     position: 'Desenvolvedor Web Full Stack',
+    image: '../public/avatar.png'
   },
   description: {
     greeting: 'Bem-vindos ao meu portfólio!'

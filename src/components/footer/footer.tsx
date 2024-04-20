@@ -1,4 +1,4 @@
-import { SocialMediaLink } from "./buttons/social-media-links"
+import { SocialMediaLink } from "../buttons/social-media-links"
 
 export const Footer = () => {
   return (

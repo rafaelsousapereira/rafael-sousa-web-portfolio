@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
-import logoIcon from "../assets/logo-site-icon.png"
+import logoIcon from "../../assets/logo-site-icon.png"
 import { NavBar } from "./navbar"
 
 export const Header = () => {
@@ -22,7 +22,7 @@ export const Header = () => {
 
             <NavBar className="flex max-lg:hidden" />
             
-            <div className="hidden max-lg:block cursor-pointer" 
+            <div className="hidden max-lg:block cursor-pointer"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <Menu className="text-4xl" />
@@ -33,7 +33,7 @@ export const Header = () => {
 
       {isMenuOpen && (
         <nav 
-          className="fixed top-0 right-0 left-0 bottom-0 lg:bottom-auto bg-violet-300 text-violet-900 font-extrabold"
+          className="absolute top-0 right-0 left-0 bottom-0 lg:bottom-auto bg-gray-300 bg-gradient-to-b from-gray-300 to-slate-400 text-gray-900 font-extrabold z-[1]"
         >
           <div 
             className="hidden max-lg:block fixed right-0 px-8 py-4 cursor-pointer" 
@@ -42,7 +42,9 @@ export const Header = () => {
             <X className="text-4xl mr-3" />
           </div>
 
-          <NavBar className="lg:hidden flex flex-col items-center justify-center h-full" />
+          <NavBar 
+            className="lg:hidden flex flex-col items-center justify-center h-full" 
+          />
         </nav>
       )}
     </>

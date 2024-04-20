@@ -1,6 +1,6 @@
-import { Footer } from "./components/footer"
-import { Header } from "./components/header"
-import { Home } from "./components/home"
+import { Footer } from "./components/footer/footer"
+import { Header } from "./components/header/header"
+import { Home } from "./components/home/home"
 
 export const App = () => {
   return (
