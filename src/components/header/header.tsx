@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
-import logoIcon from "../../assets/logo-site-icon.png"
 import { NavBar } from "./navbar"
 
 export const Header = () => {
@@ -11,14 +10,13 @@ export const Header = () => {
     <>
       <header className="bg-zinc-900/20">
         <nav 
-          className="text-violet-300 font-semibold"
+          className="text-gray-300 font-semibold"
         >
           <div className="flex items-center justify-between py-3 mx-12">
-            <img 
-              className="w-8 h-8" 
-              src={logoIcon} 
-              alt="Logo letra R minúscula azul e fundo roxo" 
-            />
+            <div 
+              className="flex justify-center items-center text-gray-600 text-4xl font-black font-icon bg-gray-300 w-8 h-8 rounded hover:bg-violet-500">
+                rs
+            </div>
 
             <NavBar className="flex max-lg:hidden" />
             

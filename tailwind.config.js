@@ -6,7 +6,8 @@ export default {
   ],
   theme: {
     fontFamily: {
-      sans: ['"Mulish", sans-serif']
+      sans: ['"Mulish", sans-serif'],
+      icon: ["Tac One"]
     },
     extend: {},
   },
