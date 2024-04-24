@@ -1,12 +1,12 @@
 type MetadataType = {
+  greeting: {
+    description: string
+  },
   person: {
     name: string
     sirName: string
     position: string
     image: string
-  },
-  description: {
-    greeting: string
   },
   socialMedia: {
     url: {
@@ -17,14 +17,14 @@ type MetadataType = {
 }
 
 export const metadata: MetadataType = {
+  greeting: {
+    description: 'Bem-vindos, ao meu portfólio!'
+  },
   person: {
     name: 'Rafael',
     sirName: 'Sousa Pereira',
     position: 'Desenvolvedor Web Full Stack',
     image: '.github/avatar.png'
-  },
-  description: {
-    greeting: 'Bem-vindos ao meu portfólio!'
   },
   socialMedia: {
     url: {

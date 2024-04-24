@@ -9,7 +9,7 @@ export const Home = () => {
       <div className="grid lg:grid-cols-2">
         <section>
           <p className="flex gap-3 mt-9 mb-5 text-xl font-semibold">
-            {metadata.description.greeting}
+            {metadata.greeting.description}
           </p>
           <p className="flex flex-col font-medium text-4xl uppercase">
             {metadata.person.name}
