@@ -25,11 +25,11 @@ export const Home = () => {
         <section>
           <ImageHome />
         </section>
+
+        <nav className="flex gap-3 text-lg max-lg:flex-col max-lg:m-auto max-lg:mt-9">
+          <ButtonGroup>Baixe meu CV</ButtonGroup>
+        </nav>
       </div>
-      
-      <nav className="flex gap-3 text-lg max-lg:m-auto">
-        <ButtonGroup>Baixe meu CV</ButtonGroup>
-      </nav>
     </div>
   )
 }
