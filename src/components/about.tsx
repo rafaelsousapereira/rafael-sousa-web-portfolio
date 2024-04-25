@@ -1,6 +1,6 @@
 
 export const About = () => {
   return (
-    <h1>About - Hello World!!!</h1>
+    <h1 className="text-lg font-extrabold">About - Hello World!!!</h1>
   )
 }

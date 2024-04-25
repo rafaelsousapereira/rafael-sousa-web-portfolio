@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { Home } from './components/home/home.tsx'
 import { About } from './components/about.tsx'
+import { App } from './app.tsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />
+    element: <App />
   },
   {
     path: "/about",
