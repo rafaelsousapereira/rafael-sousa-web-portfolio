@@ -6,7 +6,7 @@ interface NavBarProps extends ComponentProps<"ul"> {}
 export const NavBar = (props: NavBarProps) => {
   
   const navLink = [
-    { href: "#about-us", label: "Sobre mim" },
+    { href: "/about", label: "Sobre mim" },
   ]
 
   return (
