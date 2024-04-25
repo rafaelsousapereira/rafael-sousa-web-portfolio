@@ -1,7 +1,7 @@
-import { ButtonGroup } from "../buttons/button-group"
 import { metadata } from '../../data/data'
 import { ImageHome } from "./image-home"
 import { Footer } from "../footer/footer"
+import { NavLink } from "../buttons/nav-link"
 
 export const Home = () => {
 
@@ -28,7 +28,11 @@ export const Home = () => {
         </section>
 
         <nav className="flex gap-3 text-lg max-lg:flex-col max-lg:m-auto max-lg:mt-9">
-          <ButtonGroup>Baixe meu CV</ButtonGroup>
+        <NavLink to={"/about"} 
+          className='text-center font-extrabold border-2 hover:text-violet-500 border-gray-300 hover:border-violet-500 p-2 rounded w-48 hover:bg-zinc-50/5 transition'
+        >
+          Saiba Mais
+        </NavLink>
         </nav>
       </main>
 

@@ -20,7 +20,7 @@ export const SocialMediaLink = (props: SocialMediaLinkProps) => {
         </div>
 
         <p className="text-center">
-          &copy; {new Date().getFullYear()} - Desenvolvido por <span className="text-zinc-500 underline hover:text-violet-500 cursor-pointer"> Rafael Sousa Pereira</span>. Todos os direitos reservados.
+          &copy; <span className="font-semibold">{new Date().getFullYear()}</span> - Desenvolvido por <span className="text-zinc-500 font-semibold underline hover:text-violet-500 cursor-pointer"> Rafael Sousa Pereira</span>. Todos os direitos reservados.
         </p>
       </div>
     </nav>
