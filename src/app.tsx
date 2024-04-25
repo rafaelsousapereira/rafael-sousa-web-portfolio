@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
-import { Footer } from "./components/footer/footer"
 import { Header } from "./components/header/header"
 import { Home } from "./components/home/home"
-import { About } from "./components/about"
+import { About } from "./components/about/about"
 
 export const App = () => {
   return (
@@ -14,7 +13,6 @@ export const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
           </Routes>
-        <Footer />
       </BrowserRouter>
     </>
   )

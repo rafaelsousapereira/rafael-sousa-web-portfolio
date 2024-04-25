@@ -1,6 +1,7 @@
 import { ButtonGroup } from "../buttons/button-group"
 import { metadata } from '../../data/data'
 import { ImageHome } from "./image-home"
+import { Footer } from "../footer/footer"
 
 export const Home = () => {
 
@@ -30,6 +31,8 @@ export const Home = () => {
           <ButtonGroup>Baixe meu CV</ButtonGroup>
         </nav>
       </main>
+
+      <Footer />
     </div>
   )
 }
