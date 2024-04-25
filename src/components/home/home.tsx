@@ -6,7 +6,7 @@ export const Home = () => {
 
   return (
     <div className="flex flex-col mx-12 gap-10 text-gray-300">
-      <div className="grid lg:grid-cols-2">
+      <main className="grid lg:grid-cols-2">
         <section>
           <p className="flex gap-3 mt-9 mb-5 text-xl font-semibold">
             {metadata.greeting.description}
@@ -29,7 +29,7 @@ export const Home = () => {
         <nav className="flex gap-3 text-lg max-lg:flex-col max-lg:m-auto max-lg:mt-9">
           <ButtonGroup>Baixe meu CV</ButtonGroup>
         </nav>
-      </div>
+      </main>
     </div>
   )
 }

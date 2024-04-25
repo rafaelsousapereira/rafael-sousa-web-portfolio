@@ -42,6 +42,7 @@ export const Header = () => {
 
           <NavBar 
             className="lg:hidden flex flex-col items-center justify-center h-full" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           />
         </nav>
       )}

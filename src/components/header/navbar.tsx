@@ -5,15 +5,15 @@ interface NavBarProps extends ComponentProps<"ul"> {}
 
 export const NavBar = (props: NavBarProps) => {
   
-  const navLink = [
-    { href: "/about", label: "Sobre mim" },
+  const routes = [
+    { url: "/about", label: "Sobre mim" },
   ]
 
   return (
     <ul {...props}>
-      {navLink.map((item) => (
-        <li key={item.href}>
-          <NavLink href={item.href}>{item.label}</NavLink>
+      {routes.map((item) => (
+        <li key={item.url}>
+          <NavLink to={item.url}>{item.label}</NavLink>
         </li>
       ))}
     </ul>
