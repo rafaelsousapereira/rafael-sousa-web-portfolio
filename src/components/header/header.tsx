@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 import { NavBar } from "./navbar"
 
@@ -6,11 +6,19 @@ export const Header = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+  useEffect(() => {
+    isMenuOpen 
+      ? document.documentElement.classList.add('overflow-y-hidden', 'max-h-0', 'scrollbar-none')
+      : document.documentElement.classList.remove('overflow-y-hidden', 'max-h-0', 'scrollbar-none')
+
+    return () => document.documentElement.classList.remove('overflow-y-hidden', 'max-h-0', 'scrollbar-none')
+  }, [isMenuOpen])
+
   return (
     <>
       <header className="bg-zinc-900/20">
         <nav 
-          className="text-gray-300 font-semibold"
+          className="relative text-gray-300 font-semibold"
         >
           <div className="flex items-center justify-between py-3 mx-12">
             <div 
@@ -44,7 +52,7 @@ export const Header = () => {
             className="lg:hidden flex flex-col items-center justify-center h-full" 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           />
-        </nav>
+        </nav>       
       )}
     </>
   )

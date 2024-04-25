@@ -9,7 +9,14 @@ export default {
       sans: ['"Mulish", sans-serif'],
       icon: ["Tac One"]
     },
-    extend: {},
+    extend: {
+      maxHeight: {
+        '0': '0',
+      },
+      scrollbar: {
+        none: 'none',
+      },
+    },
   },
   plugins: [],
 }
