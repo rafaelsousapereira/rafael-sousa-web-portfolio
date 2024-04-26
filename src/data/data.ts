@@ -45,7 +45,6 @@ export const metadata: MetadataType = {
       Habilidade em HTML, CSS, JavaScript e Java; Com objetivo de criar designers minimalistas, responsivos, criar API's robustas e escalaveis.
       Experiência em Java, Spring Boot e Node.js, como Frameworks para Back-End e para Front-End com React.js, Styled Components e Tailwind CSS e utilizo TypeScript como suporte adicional.
       Proativo, sempre buscando novos desafios e conhecimentos, me mantendo atualizado com as tendências do mercado e tecnologias mais recentes, com muita vontade de aprender.
-      Sempre mantendo-me atualizado com as tendências do mercado e tecnológicas mais recentes.
     `,
     experience: [
       "Desenvolvedor Web Full Stack, Freelancer - (11/2023-Atual)", 
