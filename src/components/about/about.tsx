@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { metadata } from "../../data/data"
+import { SquareArrowLeft } from "lucide-react"
 
 export const About = () => {
 
@@ -35,9 +36,9 @@ export const About = () => {
         </ul>
       </div>
 
-      <Link to="/" className="fixed bottom-0 left-0 mx-10 my-5 text-sm font-extrabold text-zinc-600 hover:text-violet-600 underline"
+      <Link to="/" className="flex gap-1 fixed bottom-0 left-0 mx-10 my-5 text-base font-extrabold bg-zinc-200/60 p-1 rounded text-zinc-700 hover:bg-violet-600/60 hover:text-violet-300"
         >
-        Voltar
+        <SquareArrowLeft /> Home
       </Link>
     </>
   )
