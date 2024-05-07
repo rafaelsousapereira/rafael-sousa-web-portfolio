@@ -8,7 +8,7 @@ export const Home = () => {
   return (
     <div className="flex flex-col mx-12 gap-2 text-gray-300">
       <main className="grid lg:grid-cols-2">
-        <section>
+        <section className='max-[425px]:m-auto'>
           <p className="flex mt-9 text-2xl font-semibold max-[425px]:text-sm">
             {metadata.greeting.description}
           </p>
