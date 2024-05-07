@@ -6,6 +6,7 @@ interface NavBarProps extends ComponentProps<"ul"> {}
 export const NavBar = (props: NavBarProps) => {
   
   const routes = [
+    { url: "/", label: "Home" },
     { url: "/about", label: "Sobre mim" },
   ]
 

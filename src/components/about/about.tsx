@@ -1,5 +1,4 @@
 import { metadata } from "../../data/data"
-import { ButtonHome } from "../buttons/button-home"
 
 export const About = () => {
 
@@ -34,8 +33,6 @@ export const About = () => {
           ))}
         </ul>
       </div>
-
-      <ButtonHome />
     </>
   )
 }
