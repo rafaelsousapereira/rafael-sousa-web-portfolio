@@ -11,7 +11,7 @@ export const About = () => {
           {metadata.about.titles[0]}
         </p>
 
-        <p className="text-2xl text-center">
+        <p className="text-2xl text-center max-[425px]:text-xl">
           {metadata.about.description}
         </p>
 
@@ -22,7 +22,7 @@ export const About = () => {
 
         <ul>
           {metadata.about.experience.map((xp, index) => (
-            <li key={index} className="text-2xl leading-10">
+            <li key={index} className="text-2xl leading-10 max-[425px]:text-xl">
               <p>
                   {`${xp.substring(0, 29)}`}
                 <span className="font-extralight">
