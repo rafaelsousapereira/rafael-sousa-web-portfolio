@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom"
 import { metadata } from "../../data/data"
-import { SquareArrowLeft } from "lucide-react"
 import { ButtonHome } from "../buttons/button-home"
 
 export const About = () => {
