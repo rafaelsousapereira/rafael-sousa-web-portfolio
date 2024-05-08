@@ -52,7 +52,8 @@ export const Home = () => {
             text-2xl 
             leading-[2.8rem]
             max-[425px]:text-lg
-            max-[375px]:text-base 
+            max-[375px]:text-base
+            max-[320px]:text-xs
           `}>
             {metadata.person.position}
           </p>
