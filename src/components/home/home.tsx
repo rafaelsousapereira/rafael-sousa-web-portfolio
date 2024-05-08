@@ -6,7 +6,7 @@ import { NavMenu } from "../buttons/nav-menu"
 export const Home = () => {
 
   return (
-    <div className="flex flex-col mx-16 gap-2 text-gray-300">
+    <div className="flex flex-col mx-16 max-sm:mx-0 gap-2 text-gray-300">
       <main className="grid lg:grid-cols-2">
         <section className='max-[425px]:m-auto'>
 
