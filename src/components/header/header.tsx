@@ -20,7 +20,7 @@ export const Header = () => {
         <nav 
           className="relative text-gray-300 font-semibold"
         >
-          <div className="flex items-center justify-between py-3 mx-12">
+          <div className="flex items-center justify-between gap-3 py-3 mx-12">
             <div 
               className="flex justify-center items-center text-gray-600 text-4xl font-black font-icon bg-gray-300 w-10 h-8 rounded hover:bg-violet-500 cursor-pointer">
                 RS

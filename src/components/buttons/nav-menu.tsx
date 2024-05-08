@@ -7,8 +7,8 @@ export const NavMenu = (props: NavMenuProps) => {
     <NavLink 
       className={
         (data) => data.isActive 
-          ? "flex gap-3 p-2 rounded font-semibold text-xl text-violet-800 border-solid border-2 border-violet-800" 
-          : "flex gap-3 p-2 rounded font-semibold text-xl text-gray-500 hover:text-violet-800 transition"
+          ? "flex gap-1 p-1 mx-4 font-semibold text-xl text-gray-400 border-solid border-b-2 border-violet-800 max-[768px]:text-gray-600 max-[768px]:flex max-[768px]:my-4" 
+          : "flex gap-1 p-1 mx-4 font-semibold text-xl text-gray-500 hover:text-violet-800 transition"
       }
       {...props}
     >

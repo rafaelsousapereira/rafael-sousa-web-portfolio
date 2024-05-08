@@ -1,6 +1,6 @@
 import { ComponentProps } from "react";
 import { NavMenu } from "../buttons/nav-menu";
-import { Home, User } from "lucide-react";
+import { Contact, Home, User } from "lucide-react";
 
 interface NavBarProps extends ComponentProps<"ul"> {}
 
@@ -9,6 +9,7 @@ export const NavBar = (props: NavBarProps) => {
   const routes = [
     { url: "/", label: "Home", icon: <Home /> },
     { url: "/about", label: "Sobre", icon: <User /> },
+    { url: "/contact", label: "Contato", icon: <Contact />}
   ]
 
   return (
