@@ -1,7 +1,7 @@
 import { Github, Linkedin } from "lucide-react"
 import { ComponentProps } from "react"
 import { metadata } from "../../data/data"
-import { NavLink } from "./nav-link"
+import { NavMenu } from "./nav-menu"
 
 interface SocialMediaLinkProps extends ComponentProps<"nav"> {}
 
@@ -10,13 +10,13 @@ export const SocialMediaLink = (props: SocialMediaLinkProps) => {
     <nav {...props}>
       <div className="flex flex-col gap-3 bottom-0 justify-center mx-10 my-5">
         <div className="flex justify-center">
-          <NavLink to={metadata.socialMedia.url.linkedin} target="_blank">
-              <Linkedin />
-          </NavLink>
+          <NavMenu to={metadata.socialMedia.url.linkedin} target="_blank">
+            <Linkedin />
+          </NavMenu>
 
-          <NavLink to={metadata.socialMedia.url.github} target="_blank">
-              <Github />
-          </NavLink>
+          <NavMenu to={metadata.socialMedia.url.github} target="_blank">
+            <Github />
+          </NavMenu>
         </div>
 
         <p className="text-center mt-8 bottom-8 max-[425px]:text-base">
