@@ -12,13 +12,13 @@ export const Home = () => {
           <p className="flex mt-9 text-2xl font-semibold max-[425px]:text-sm">
             {metadata.greeting.description}
           </p>
-          <p className="flex flex-col font-medium text-[3.2rem] leading-[3.8rem] uppercase max-[425px]:text-xl">
+          <p className="flex flex-col font-medium text-[3.2rem] leading-[3.8rem] uppercase max-[425px]:text-2xl">
             {metadata.person.name}
-            <span className="font-black text-[4.2rem] leading-[3.8rem] max-[425px]:text-2xl">
+            <span className="font-black text-[4.2rem] leading-[3.8rem] max-[425px]:text-3xl">
               {metadata.person.sirName}
             </span>
           </p>
-          <p className="text-left font-semibold text-[2.2rem] leading-[3.8rem] max-[425px]:text-sm">
+          <p className="text-left font-semibold text-[2.2rem] leading-[3.8rem] max-[425px]:text-lg">
             {metadata.person.position}
           </p>
         </section>
