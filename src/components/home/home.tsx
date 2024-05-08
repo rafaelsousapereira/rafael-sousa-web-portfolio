@@ -26,8 +26,8 @@ export const Home = () => {
             flex 
             flex-col 
             font-medium 
-            text-4xl 
-            leading-[2.8rem] 
+            text-5xl 
+            leading-[3.8rem] 
             uppercase 
             max-[425px]:text-2xl
             max-[375px]:text-xl
@@ -36,8 +36,9 @@ export const Home = () => {
             {metadata.person.name}
             <span className={`
               font-black 
-              text-5xl 
-              leading-[2.8rem] 
+              text-6xl 
+              leading-[3.8rem]
+              max-[1126px]:text-3xl
               max-[425px]:text-3xl
               max-[375px]:text-2xl
               max-[320px]:text-xl
@@ -74,7 +75,7 @@ export const Home = () => {
           max-lg:mt-9
           `}>
         <NavMenu to={"/about"} 
-          className='text-center font-extrabold border-2 hover:text-violet-500 border-gray-300 hover:border-violet-500 p-2 rounded w-48 hover:bg-zinc-50/5 transition'
+          className='text-center font-extrabold border-2 hover:text-violet-500 border-gray-300 hover:border-violet-500 p-2 rounded w-72 hover:bg-zinc-50/5 transition'
         >
           Saiba Mais
         </NavMenu>
