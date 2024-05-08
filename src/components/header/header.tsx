@@ -20,12 +20,7 @@ export const Header = () => {
         <nav 
           className="relative text-gray-300 font-semibold"
         >
-          <div className="flex items-center justify-between gap-3 py-3 mx-12">
-            <div 
-              className="flex justify-center items-center text-gray-600 text-4xl font-black font-icon bg-gray-300 w-10 h-8 rounded hover:bg-violet-500 cursor-pointer">
-                RS
-            </div>
-
+          <div className="flex items-center justify-between gap-3 py-4 mx-12">
             <NavBar className="flex max-lg:hidden" />
             
             <div className="hidden max-lg:block cursor-pointer"
@@ -42,7 +37,7 @@ export const Header = () => {
           className="absolute top-0 right-0 left-0 bottom-0 lg:bottom-auto bg-gray-300 bg-gradient-to-b from-gray-300 to-slate-400 text-gray-900 font-extrabold z-[1]"
         >
           <div 
-            className="hidden max-lg:block fixed right-0 px-8 py-4 cursor-pointer" 
+            className="hidden max-lg:block fixed left-0 cursor-pointer py-4 mx-12" 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <X className="text-4xl mr-3" />
