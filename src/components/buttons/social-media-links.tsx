@@ -19,7 +19,7 @@ export const SocialMediaLink = (props: SocialMediaLinkProps) => {
           </NavMenu>
         </div>
 
-        <p className="text-center mt-8 bottom-8 max-[425px]:text-base">
+        <p className="text-center mt-28 max-[425px]:text-base max-[320px]:text-sm">
           &copy; <span className="font-semibold">{new Date().getFullYear()}</span> - Desenvolvido por <span className="text-zinc-500 font-semibold underline hover:text-violet-500 cursor-pointer">
             Rafael Sousa Pereira
           </span>. Todos os direitos reservados.
