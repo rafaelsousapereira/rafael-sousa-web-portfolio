@@ -47,7 +47,7 @@ export const metadata: MetadataType = {
     experience: [
       "Desenvolvedor Web          Freelancer (09/2023 - Atualmente)", 
       "Desenvolvedor Full Stack   BHUT Soluções em Tecnologia LTDA. (08/2022 - 02/2023)", 
-      "Programador Java           Arius Automação e Programação LTDA. (06/2021 - 09/2021)",      
+      "Desenvolvedor Java           Arius Automação e Programação LTDA. (06/2021 - 09/2021)",      
     ]
   }
 }
