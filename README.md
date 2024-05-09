@@ -39,7 +39,7 @@ Para executar este projeto localmente, siga estas etapas:
    yarn dev
    ```
 4. Abra seu navegador e acesse [http://localhost:5173/](http://localhost:5173/) para ver o portfólio em ação.
-5. Este projeto está hospedado na [Vercel](https://vercel.com/) para ver o portifólio em ação online [clique aqui.](https://rafael-sousa-web.vercel.app/)
+5. Este projeto está hospedado na [Vercel](https://vercel.com/) para ver o portifólio em ação online [clique aqui.](https://rafaelsousa.vercel.app/)
 
 ## Contribuições
 
