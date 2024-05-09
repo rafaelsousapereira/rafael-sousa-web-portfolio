@@ -41,7 +41,7 @@ export const metadata: MetadataType = {
     titles: ["Sobre mim", "Experiência Profissional"],
     description: `
       Apaixonado por desenvolvimento web e música boa, formado em Análise e Desenvolvimento de Sistemas pela Universidade São Francisco (USF) de Campinas em 2021.
-      Com experiência na área de logística onde trabalhei por mais de 10 anos, entre 2019 e 2021 iniciei minha transição de carreira para área de tecnologia onde atuei como desenvolvedor trainee, júnior e atualmente como freelancer, com foco no desenvolvimento web, API's REST e Web Services.
+      Com experiência na área de logística onde trabalhei por 8 anos, em 2021 iniciei minha transição de carreira para área de tecnologia onde atuei como desenvolvedor trainee, júnior e atualmente como freelancer, com foco no desenvolvimento web, API's REST e Web Services.
       Habilidade em front-end como HTML, CSS, JavaScript e React.js; com objetivo de criar designers minimalistas, responsivos e criar APIs robustas e escalaveis utilizo tecnologias back-end como Java, Spring Boot e Node.js no desenvolvimento de APIs e microsserviços e também utilizo TypeScript como suporte adicional.
       Proativo, sempre buscando novos desafios e conhecimentos, me mantendo atualizado com as tendências do mercado e tecnologias mais recentes, com muita vontade de aprender.
     `,
