@@ -1,4 +1,5 @@
 import { metadata } from "../../data/data"
+import { TableExperience } from "../table/table-experience"
 
 export const About = () => {
 
@@ -15,23 +16,7 @@ export const About = () => {
           {metadata.about.description}
         </p>
 
-        <p className="text-3xl text-center font-extrabold uppercase"
-        >
-          {metadata.about.titles[1]}
-        </p>
-
-        <ul>
-          {metadata.about.experience.map((xp, index) => (
-            <li key={index} className="text-2xl leading-10 max-[425px]:text-xl">
-              <p>
-                  {`${xp.substring(0, 29)}`}
-                <span className="font-extralight">
-                  {`${xp.substring(29)}`}
-                </span>
-              </p>
-            </li>
-          ))}
-        </ul>
+        <TableExperience metadata={metadata} />
       </div>
     </>
   )

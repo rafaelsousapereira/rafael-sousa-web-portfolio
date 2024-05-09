@@ -41,14 +41,13 @@ export const metadata: MetadataType = {
     titles: ["Sobre mim", "Experiência Profissional"],
     description: `
       Apaixonado por desenvolvimento web e música boa, formado em Análise e Desenvolvimento de Sistemas pela Universidade São Francisco (USF) de Campinas em 2021.
-      Com experiência na área de logística onde trabalhei por 8 anos, em 2021 iniciei minha transição de carreira para área de tecnologia onde atuei como desenvolvedor trainee, júnior e atualmente como freelancer, com foco no desenvolvimento web, API's REST e Web Services.
-      Habilidade em front-end como HTML, CSS, JavaScript e React.js; com objetivo de criar designers minimalistas, responsivos e criar APIs robustas e escalaveis utilizo tecnologias back-end como Java, Spring Boot e Node.js no desenvolvimento de APIs e microsserviços e também utilizo TypeScript como suporte adicional.
-      Proativo, sempre buscando novos desafios e conhecimentos, me mantendo atualizado com as tendências do mercado e tecnologias mais recentes, com muita vontade de aprender.
+      Com experiência na área de logística onde trabalhei por 8 anos, em 2019/2021 iniciei minha transição de carreira para área de tecnologia onde atuei como desenvolvedor trainee, júnior e atualmente como freelancer autônomo, com foco no desenvolvimento web.
+      Com objetivo de criar designers minimalistas, responsivos e criar APIs robustas e escalaveis utilizo a tecnologias para resolver problemas e ajudar pessoas e comunidades na minha região.
     `,
     experience: [
-      "Desenvolvedor Web Full Stack, Freelancer - 11/2023 - Atualmente", 
-      "Desenvolvedor Full Stack Jr, BHUT Soluções em Tecnologia LTDA - 08/2022 - 02/2023", 
-      "Programador Java Trainee,    Arius Automação e Programação LTDA - 06/2021 - 09/2021"
+      "Desenvolvedor Web Full Stack Freelancer (09/2023 - Atualmente)", 
+      "Desenvolvedor Full Stack Jr  BHUT Soluções em Tecnologia LTDA. (08/2022 - 02/2023)", 
+      "Programador Java Trainee     Arius Automação e Programação LTDA. (06/2021 - 09/2021)",      
     ]
   }
 }
