@@ -45,9 +45,9 @@ export const metadata: MetadataType = {
       Com objetivo de criar designers minimalistas, responsivos e criar APIs robustas e escalaveis utilizo a tecnologias para resolver problemas e ajudar pessoas e comunidades na minha região.
     `,
     experience: [
-      "Desenvolvedor Web Full Stack Freelancer (09/2023 - Atualmente)", 
-      "Desenvolvedor Full Stack Jr  BHUT Soluções em Tecnologia LTDA. (08/2022 - 02/2023)", 
-      "Programador Java Trainee     Arius Automação e Programação LTDA. (06/2021 - 09/2021)",      
+      "Desenvolvedor Web          Freelancer (09/2023 - Atualmente)", 
+      "Desenvolvedor Full Stack   BHUT Soluções em Tecnologia LTDA. (08/2022 - 02/2023)", 
+      "Programador Java           Arius Automação e Programação LTDA. (06/2021 - 09/2021)",      
     ]
   }
 }
