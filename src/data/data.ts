@@ -40,7 +40,8 @@ export const metadata: MetadataType = {
   about: {
     titles: ["Sobre mim", "Experiência Profissional"],
     description: `
-      Apaixonado por desenvolvimento web e música, formado em Análise e Desenvolvimento de Sistemas pela Universidade São Francisco (USF) de Campinas em 2021 iniciei minha transição de carreira para área de tecnologia onde atuei como desenvolvedor trainee, júnior e atualmente como freelancer autônomo, com foco no desenvolvimento web. Com objetivo de criar designers minimalistas, responsivos e criar APIs robustas e escalaveis utilizo a tecnologias para resolver problemas, ajudar pessoas e comunidades na minha região.
+      Apaixonado por desenvolvimento web e música, sou desenvolvedor desde 2021, quando me formei em Análise e Desenvolvimento de Sistemas pela Universidade São Francisco de Campinas - São Paulo e experiência profissional na área, atualmente como
+      desenvolvedor freelancer. Com objetivo de criar designers minimalistas, responsivos e criar APIs robustas e escalaveis utilizo a tecnologias para resolver problemas do dia a dia de pessoas.
     `,
     experience: [
       "Desenvolvedor Web          Freelancer (09/2023 - Atualmente)", 
