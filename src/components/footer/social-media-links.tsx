@@ -11,11 +11,11 @@ export const SocialMediaLink = (props: SocialMediaLinkProps) => {
       <div className="flex flex-col gap-3 bottom-0 justify-center m-5">
         <div className="flex justify-center">
           <NavMenu to={metadata.socialMedia.url.linkedin} target="_blank">
-            <Linkedin size={35} strokeWidth={1.5} />
+            <Linkedin size={35} strokeWidth={1.5} absoluteStrokeWidth />
           </NavMenu>
 
           <NavMenu to={metadata.socialMedia.url.github} target="_blank">
-            <Github size={35} strokeWidth={1.5} />
+            <Github size={35} strokeWidth={1.5} absoluteStrokeWidth />
           </NavMenu>
         </div>
 

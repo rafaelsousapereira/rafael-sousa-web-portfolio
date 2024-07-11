@@ -8,9 +8,9 @@ export const ContactForm = () => {
     <div>
       <form className="max-w-md mx-auto mt-11">
         <fieldset id="fieldset-header">
-          <legend className="flex text-3xl text-violet-500 font-extrabold text-center my-8"
+          <legend className="flex text-2xl text-violet-500 font-extrabold text-center my-8 mx-2"
           >
-            <Mail className="flex justify-center my-1 mr-2" size={30} strokeWidth={2.5} absoluteStrokeWidth /> Entre em contato por e-mail
+            <Mail className="flex justify-center mr-1" size={30} strokeWidth={2.5} absoluteStrokeWidth />Entre em contato por e-mail
           </legend>
             
             <div className="max-sm:mx-5">
