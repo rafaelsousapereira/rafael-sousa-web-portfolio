@@ -12,7 +12,7 @@ export const TableExperience = ({ metadata }: MetadataType) => {
   return (
     <>
       <table className="table-fixed">
-        <caption className="caption-top text-3xl text-center font-extrabold uppercase mb-4">
+        <caption className="caption-top text-3xl text-violet-500 text-center font-extrabold uppercase mb-4">
           {metadata.about.titles[1]}
         </caption>
 

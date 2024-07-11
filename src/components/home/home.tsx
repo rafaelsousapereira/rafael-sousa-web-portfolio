@@ -6,79 +6,30 @@ import { NavMenu } from "../header/nav-menu"
 export const Home = () => {
 
   return (
-    <div className="flex flex-col mx-16 max-sm:mx-0 gap-2 text-gray-300">
+    <div className="flex flex-col mx-8 gap-2 text-gray-300">
       <main className="grid lg:grid-cols-2">
-        <section className='max-[425px]:m-auto'>
+        <section className="max-[425px]:m-auto">
 
-          <p className={`
-            flex 
-            mt-9 
-            text-2xl 
-            leading-[2.8rem]
-            font-semibold 
-            max-[425px]:text-sm
-            max-[320px]:text-xs
-          `}>
-            {metadata.greeting.description}
+          <p className="flex mt-9 mb-9 text-2xl font-extralight">{metadata.greeting.description}</p>
+
+          <p className="flex flex-col font-light text-4xl uppercase max-sm:text-3xl">
+            {metadata.person.name} <span className="font-extrabold text-5xl max-[425px]:text-3xl">{metadata.person.sirName}</span>
           </p>
-
-          <p className={`
-            flex 
-            flex-col 
-            font-medium 
-            text-5xl 
-            leading-[3.8rem] 
-            uppercase 
-            max-[425px]:text-2xl
-            max-[375px]:text-xl
-            max-[320px]:text-lg
-          `}>
-            {metadata.person.name}
-            <span className={`
-              font-black 
-              text-6xl 
-              leading-[3.8rem]
-              max-[1126px]:text-3xl
-              max-[425px]:text-3xl
-              max-[375px]:text-2xl
-              max-[320px]:text-xl
-            `}>
-              {metadata.person.sirName}
-            </span>
-          </p>
-
-          <p className={`
-            text-left 
-            font-semibold 
-            text-2xl 
-            leading-[2.8rem]
-            max-[425px]:text-lg
-            max-[375px]:text-base
-            max-[320px]:text-xs
-          `}>
-            {metadata.person.position}
-          </p>
-
+          
+          <p className="text-left font-extralight text-3xl text-violet-500 mt-4.5 max-sm:text-lg"> {metadata.person.position}</p>
+          
         </section>
-
+        
         <section>
           <ImageHome />
         </section>
-
-        <nav className={`
-          flex 
-          gap-3 
-          mt-4 
-          text-xl 
-          max-lg:flex-col 
-          max-lg:m-auto 
-          max-lg:mt-9
-          `}>
-        <NavMenu to={"/about"} 
-          className='text-center font-extrabold border-2 hover:text-violet-500 border-gray-300 hover:border-violet-500 p-2 rounded w-72 hover:bg-zinc-50/5 transition'
-        >
-          Saiba Mais
-        </NavMenu>
+        
+        <nav className="flex gap-3 text-5xl mt-4 max-lg:flex-col max-lg:m-auto max-lg:mt-9">
+          <NavMenu to={"/about"} 
+            className="flex text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-semibold rounded-lg text-lg w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800  max-sm:justify-center"
+          >
+            Saiba Mais
+          </NavMenu>
         </nav>
       </main>
 

@@ -28,7 +28,7 @@ export const metadata: MetadataType = {
   person: {
     name: 'Rafael',
     sirName: 'Sousa Pereira',
-    position: 'Desenvolvedor Web Full Stack',
+    position: 'Desenvolvedor Full Stack Java & React',
     image: '.github/avatar.png'
   },
   socialMedia: {
@@ -44,7 +44,7 @@ export const metadata: MetadataType = {
       desenvolvedor freelancer. Com objetivo de criar designers minimalistas, responsivos e criar APIs robustas e escalaveis utilizo a tecnologias para resolver problemas do dia a dia de pessoas.
     `,
     experience: [
-      "Desenvolvedor Web          Freelancer (09/2023 - Atualmente)", 
+      "Desenvolvedor Web          Freelancer (03/2023 - Atualmente)", 
       "Desenvolvedor Full Stack   BHUT Soluções em Tecnologia LTDA. (08/2022 - 02/2023)", 
       "Desenvolvedor Java           Arius Automação e Programação LTDA. (06/2021 - 09/2021)",      
     ]
