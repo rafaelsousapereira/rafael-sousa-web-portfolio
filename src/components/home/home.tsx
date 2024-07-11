@@ -1,7 +1,7 @@
 import { metadata } from '../../data/data'
 import { ImageHome } from "./image-home"
 import { Footer } from "../footer/footer"
-import { NavMenu } from "../buttons/nav-menu"
+import { NavMenu } from "../header/nav-menu"
 
 export const Home = () => {
 

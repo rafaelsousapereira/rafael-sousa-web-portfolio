@@ -1,5 +1,5 @@
 import { metadata } from "../../data/data"
-import { TableExperience } from "../table/table-experience"
+import { TableExperience } from "./table/table-experience"
 
 export const About = () => {
 

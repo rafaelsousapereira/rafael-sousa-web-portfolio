@@ -1,7 +1,7 @@
 import { Github, Linkedin } from "lucide-react"
 import { ComponentProps } from "react"
 import { metadata } from "../../data/data"
-import { NavMenu } from "./nav-menu"
+import { NavMenu } from "../header/nav-menu"
 
 interface SocialMediaLinkProps extends ComponentProps<"nav"> {}
 

@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import { NavMenu } from "../buttons/nav-menu";
+import { NavMenu } from "./nav-menu";
 import { Contact, Home, User } from "lucide-react";
 
 interface NavBarProps extends ComponentProps<"ul"> {}
