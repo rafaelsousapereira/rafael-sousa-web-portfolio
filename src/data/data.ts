@@ -7,6 +7,7 @@ type MetadataType = {
     sirName: string
     position: string
     image: string
+    description: string
   },
   socialMedia: {
     url: {
@@ -28,8 +29,9 @@ export const metadata: MetadataType = {
   person: {
     name: 'Rafael',
     sirName: 'Sousa Pereira',
-    position: 'Desenvolvedor Full Stack Java & React',
-    image: '.github/avatar.png'
+    position: 'Desenvolvedor Full-stack',
+    image: '.github/avatar.png',
+    description: 'Desenvolvedor com vasta experiência em desenvolvimento de aplicação web escaláveis e responsivas. Sou apaixonado por criar soluções tecnologicas que resolvem problemas reais e que agregam valor aos usuários.',
   },
   socialMedia: {
     url: {
@@ -40,8 +42,7 @@ export const metadata: MetadataType = {
   about: {
     titles: ["Sobre mim", "Experiência Profissional"],
     description: `
-      Apaixonado por desenvolvimento web e música, sou desenvolvedor desde 2021, quando me formei em Análise e Desenvolvimento de Sistemas pela Universidade São Francisco de Campinas - São Paulo e experiência profissional na área, atualmente como
-      desenvolvedor freelancer. Com objetivo de criar designers minimalistas, responsivos e criar APIs robustas e escalaveis utilizo a tecnologias para resolver problemas do dia a dia de pessoas.
+      Olá, eu sou Rafael Sousa um desenvolvedor full-stack apaixonado por tecnologia e soluções criativas. Com mais de 3 anos de experiência em desenvolvimento web, tenho trabalhado com diversas tecnologias para criar soluções robustas e escaláveis que atendam às necessidades dos clientes. Eu amo o desafio de encontrar soluções inovadoras e criativas para problemas complexos e estou sempre buscando aprender e crescer como profissional.
     `,
     experience: [
       "Desenvolvedor Web          Freelancer (03/2023 - Atualmente)", 
