@@ -10,7 +10,7 @@ export const ContactForm = () => {
         <fieldset id="fieldset-header">
           <legend className="flex text-3xl text-violet-500 font-extrabold text-center my-8"
           >
-            <Mail className="flex justify-center my-1 mr-2" size={30} strokeWidth={2.5} absoluteStrokeWidth /> Entre em contato 
+            <Mail className="flex justify-center my-1 mr-2" size={30} strokeWidth={2.5} absoluteStrokeWidth /> Entre em contato por e-mail
           </legend>
             
             <div className="max-sm:mx-5">
