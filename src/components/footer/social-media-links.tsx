@@ -1,9 +1,9 @@
-import { Github, Linkedin } from "lucide-react"
-import { ComponentProps } from "react"
-import { metadata } from "../../data/data"
-import { NavMenu } from "../header/nav-menu"
+import { Github, Linkedin } from 'lucide-react'
+import { ComponentProps } from 'react'
+import { metadata } from '../../data/data'
+import { NavMenu } from '../header/nav-menu'
 
-interface SocialMediaLinkProps extends ComponentProps<"nav"> {}
+interface SocialMediaLinkProps extends ComponentProps<'nav'> {}
 
 export const SocialMediaLink = (props: SocialMediaLinkProps) => {
   return (
@@ -20,10 +20,13 @@ export const SocialMediaLink = (props: SocialMediaLinkProps) => {
         </div>
 
         <p className="text-center mt-8 max-[425px]:text-base max-[320px]:text-sm">
-          &copy; <span className="font-semibold">
-            {new Date().getFullYear()}</span> - Desenvolvido por <span className="text-zinc-500 font-semibold underline hover:text-violet-500 cursor-pointer">
+          &copy;{' '}
+          <span className="font-semibold">{new Date().getFullYear()}</span> -
+          Desenvolvido por{' '}
+          <span className="text-zinc-500 font-semibold underline hover:text-violet-500 cursor-pointer">
             Rafael
-          </span>. <br /> Todos os direitos reservados.
+          </span>
+          . <br /> Todos os direitos reservados.
         </p>
       </div>
     </nav>

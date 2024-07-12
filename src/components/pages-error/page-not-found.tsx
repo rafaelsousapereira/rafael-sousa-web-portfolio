@@ -1,4 +1,4 @@
-import { Construction } from "lucide-react"
+import { Construction } from 'lucide-react'
 
 export const PageNotFound = () => {
   return (
@@ -8,13 +8,9 @@ export const PageNotFound = () => {
           <Construction size={68} />
         </span>
 
-        <p>
-          Página em desenvolvimento.
-        </p>
-        
-        <p className="text-zinc-500 mt-4">
-          Tente novamente mais tarde.
-        </p>
+        <p>Página em desenvolvimento.</p>
+
+        <p className="text-zinc-500 mt-4">Tente novamente mais tarde.</p>
       </div>
     </>
   )

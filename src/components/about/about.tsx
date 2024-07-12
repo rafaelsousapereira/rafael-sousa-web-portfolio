@@ -1,8 +1,7 @@
-import { metadata } from "../../data/data"
-import { TableExperience } from "./table/table-experience"
+import { metadata } from '../../data/data'
+import { TableExperience } from './table/table-experience'
 
 export const About = () => {
-
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-8 text-zinc-300 m-4">

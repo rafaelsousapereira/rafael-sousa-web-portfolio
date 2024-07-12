@@ -19,8 +19,12 @@ export const TableExperience = ({ metadata }: MetadataType) => {
         <tbody>
           {metadata.about.experience.map((exp, index) => (
             <tr className="hover:bg-slate-700/20 cursor-pointer" key={index}>
-              <td className="p-2 text-2xl max-[425px]:text-xl font-medium">{exp.substring(0, 25)}</td>
-              <td className="p-2 text-2xl max-[425px]:text-xl font-light">{exp.substring(25)}</td>
+              <td className="p-2 text-2xl max-[425px]:text-xl font-medium">
+                {exp.substring(0, 25)}
+              </td>
+              <td className="p-2 text-2xl max-[425px]:text-xl font-light">
+                {exp.substring(25)}
+              </td>
             </tr>
           ))}
         </tbody>
