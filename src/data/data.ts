@@ -43,12 +43,12 @@ export const metadata: MetadataType = {
   about: {
     titles: ['Sobre mim', 'Experiência Profissional'],
     description: `
-      Olá, eu sou Rafael Sousa um desenvolvedor full-stack apaixonado por tecnologia e soluções criativas. Com mais de 3 anos de experiência em desenvolvimento web, tenho trabalhado com diversas tecnologias para criar soluções robustas e escaláveis que atendam às necessidades dos clientes. Eu amo o desafio de encontrar soluções inovadoras e criativas para problemas complexos e estou sempre buscando aprender e crescer como profissional.
+      Olá, eu sou Rafael Sousa um desenvolvedor full-stack apaixonado por tecnologia e soluções criativas. Com mais de três anos de experiência em desenvolvimento web, tenho trabalhado com diversas tecnologias para criar soluções robustas e escaláveis que atendam às necessidades dos clientes. Eu amo o desafio de encontrar soluções inovadoras e criativas para problemas complexos e estou sempre buscando aprender e crescer como profissional.
     `,
     experience: [
-      'Desenvolvedor Web          Freelancer (03/2023 - Atualmente)',
-      'Desenvolvedor Full Stack   BHUT Soluções em Tecnologia LTDA. (08/2022 - 02/2023)',
-      'Desenvolvedor Java           Arius Automação e Programação LTDA. (06/2021 - 09/2021)',
+      'Desenvolvedor Web          Freelancer (Atualmente)',
+      'Desenvolvedor Full Stack   BHUT Soluções em Tecnologia LTDA. (2022 - 2023)',
+      'Desenvolvedor Java           Arius Automação e Programação LTDA. (2021)',
     ],
   },
 }
