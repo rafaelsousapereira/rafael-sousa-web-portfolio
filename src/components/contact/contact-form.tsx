@@ -7,6 +7,9 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useEffect } from 'react'
 import { LabelComponent } from './label-component'
+import emailjs from '@emailjs/browser'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const submitEmailFormSchema = z.object({
   name: z
@@ -20,6 +23,7 @@ const submitEmailFormSchema = z.object({
 type SubmitEmailFormSchema = z.infer<typeof submitEmailFormSchema>
 
 export const ContactForm = () => {
+ 
   const {
     register,
     handleSubmit,
@@ -31,14 +35,33 @@ export const ContactForm = () => {
     defaultValues: { email: '', name: '', message: '' },
   })
 
-  const handleSubmitEmailForm = (data: SubmitEmailFormSchema) => {
-    alert(`Nome: ${data.name}, ${data.email}, ${data.message}`)
-    
-    if (formState.isSubmitted) {
-      alert("Mensagem enviada com sucesso!")
-    } else {
-      alert("Falha ao enviar mensagem. Tente novamente!")
+  const handleSendEmail = (data: SubmitEmailFormSchema) => {
+    const publicKey = import.meta.env.VITE_APP_PUBLIC_KEY
+    const serviceID = import.meta.env.VITE_APP_SERVICE
+    const templateID = import.meta.env.VITE_APP_TEMPLATE
+
+    const templateParams = {
+      from_name: data.name,
+      email: data.email,
+      message: data.message,
     }
+
+    const options = {
+      publicKey: publicKey,
+    }
+    
+    emailjs.init(options)
+
+    emailjs.send(serviceID, templateID, templateParams, options.publicKey)
+      .then((response) => {
+        toast.success("E-mail enviado com sucesso !")
+        console.log("SUCCESS: ", response.status, response.text)
+      })
+      .catch((error) => {
+        toast.error("Erro ao enviar e-mail, Tente novamente !")
+        console.error("ERROR: ", error)
+      }
+    )
   }
 
   useEffect(() => {
@@ -49,8 +72,9 @@ export const ContactForm = () => {
 
   return (
     <div>
+      <ToastContainer theme='dark' />
       <form
-        onSubmit={handleSubmit(handleSubmitEmailForm)}
+        onSubmit={handleSubmit(handleSendEmail)}
         className="max-w-md mx-auto mt-11"
       >
         <fieldset id="fieldset-header">
