@@ -6,14 +6,15 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useEffect } from 'react'
+import { LabelComponent } from './label-component'
 
 const submitEmailFormSchema = z.object({
-  Email: z.string().email('Email é obrigatório'),
-  Assunto: z
+  name: z
     .string()
-    .min(5, 'Assunto deve ter no minímo 5 caracteres')
-    .max(50, 'Assunto deve conter no maxímo 50 caracteres'),
-  Mensagem: z.string().min(5, 'Mensagem deve conter no minímo 5 caracteres'),
+    .min(5, 'Nome deve ter no minímo 5 caracteres')
+    .max(50, 'Nome deve conter no maxímo 50 caracteres'),
+  email: z.string().email('Email é obrigatório'),
+  message: z.string().min(5, 'Mensagem deve conter no minímo 5 caracteres'),
 })
 
 type SubmitEmailFormSchema = z.infer<typeof submitEmailFormSchema>
@@ -27,16 +28,22 @@ export const ContactForm = () => {
     reset,
   } = useForm<SubmitEmailFormSchema>({
     resolver: zodResolver(submitEmailFormSchema),
-    defaultValues: { Email: '', Assunto: '', Mensagem: '' },
+    defaultValues: { email: '', name: '', message: '' },
   })
 
   const handleSubmitEmailForm = (data: SubmitEmailFormSchema) => {
-    console.log(data)
+    alert(`Nome: ${data.name}, ${data.email}, ${data.message}`)
+    
+    if (formState.isSubmitted) {
+      alert("Mensagem enviada com sucesso!")
+    } else {
+      alert("Falha ao enviar mensagem. Tente novamente!")
+    }
   }
 
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
-      reset({ Email: '', Assunto: '', Mensagem: '' })
+      reset({ email: '', name: '', message: '' })
     }
   }, [formState, reset])
 
@@ -58,36 +65,48 @@ export const ContactForm = () => {
           </legend>
 
           <div className="max-sm:mx-5">
-            <InputComponent
-              {...register('Email')}
-              id="event-email"
-              type="email"
-              aria-invalid={errors.Email?.message ? 'true' : 'false'}
-            />
-            {errors.Email && (
-              <p className="text-sm text-red-500">{errors.Email.message}</p>
-            )}
 
-            <InputComponent
-              {...register('Assunto')}
-              id="event-subject"
-              type="text"
-              aria-invalid={errors.Assunto?.message ? 'true' : 'false'}
-            />
-            {errors.Assunto && (
-              <p className="text-sm text-red-500 mt-0">
-                {errors.Assunto?.message}
-              </p>
-            )}
+            <div className='relative z-0 w-full mb-6 group'>
+              <InputComponent
+                {...register('name')}
+                id="event-subject"
+                type="text"
+                aria-invalid={errors.name?.message ? 'true' : 'false'}
+              />
+              {errors.name && (
+                <p className="text-sm text-red-500 mt-0">
+                  {errors.name?.message}
+                </p>
+              )}
 
-            <TextAreaComponent
-              {...register('Mensagem')}
-              id="event-message"
-              aria-invalid={errors.Mensagem?.message ? 'true' : 'false'}
-            />
-            {errors.Mensagem && (
-              <p className="text-sm text-red-500">{errors.Mensagem?.message}</p>
-            )}
+              <LabelComponent>Digite Seu Nome</LabelComponent>
+            </div>
+            
+            <div className='relative z-0 w-full mb-6 group'>
+              <InputComponent
+                {...register('email')}
+                id="event-email"
+                type="email"
+                aria-invalid={errors.email?.message ? 'true' : 'false'}
+              />
+              {errors.email && (
+                <p className="text-sm text-red-500">{errors.email.message}</p>
+              )}
+
+              <LabelComponent>Digite Seu E-mail</LabelComponent>
+            </div>
+
+            <div className='relative z-0 w-full mb-6 group'>
+              <TextAreaComponent
+                {...register('message')}
+                id="event-message"
+                aria-invalid={errors.message?.message ? 'true' : 'false'}
+              />
+              {errors.message && (
+                <p className="text-sm text-red-500">{errors.message?.message}</p>
+              )}
+              <LabelComponent>Digite Sua Mensagem</LabelComponent>
+            </div>
 
             <ButtonComponent type="submit">
               <Send
@@ -96,7 +115,7 @@ export const ContactForm = () => {
                 strokeWidth={1.5}
                 absoluteStrokeWidth
               />
-              Enviar
+              Enviar Mensagem
             </ButtonComponent>
           </div>
         </fieldset>
