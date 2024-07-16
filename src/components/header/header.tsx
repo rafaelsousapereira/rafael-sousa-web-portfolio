@@ -28,7 +28,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="bg-zinc-900/20">
+      <header className="bg-zinc-900/90 sticky top-0 left-0 right-0">
         <nav className="relative text-gray-300 font-semibold">
           <div className="flex items-center justify-between gap-3 py-4 mx-4">
             <NavbarRoutesComponent className="flex max-lg:hidden" />
