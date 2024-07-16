@@ -21,16 +21,20 @@ export const ListExperienceComponent = ({ id, metadata }: MetadataType) => {
   return (
     <>
       <span className="w-10 h-10 rounded-full mb-0">
-        <Building2 size={35} strokeWidth={1.5} absoluteStrokeWidth  />
+        <Building2 size={35} strokeWidth={1.5} absoluteStrokeWidth />
       </span>
       <div className="text-xl font-medium text-white">
         {metadata.about.experience.map((company) => (
-          <>
-            <div>{company.companies[id]}</div>
+          <div key={company.companies[id]}>
+            <div>
+              {company.companies[id]}
+            </div>
             {metadata.about.experience.map((rule) => (
-              <div className="text-lg text-gray-500">{rule.rules[id]}</div>
+              <div key={rule.rules[id]} className="text-lg text-gray-500">
+                {rule.rules[id]}
+              </div>
             ))}
-          </>
+          </div>
         ))}
       </div>
     </>

@@ -1,5 +1,5 @@
 import { metadata } from '../../data/metadatas'
-import { ListExperienceComponent } from './table/list-experience-component'
+import { ListExperienceComponent } from './list-experience-component'
 
 export const About = () => {
   return (
