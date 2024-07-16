@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react'
-import { metadata } from '../../data/data'
+import { metadata } from '../../data/metadatas'
 
 interface ImageHomeProps extends ComponentProps<'img'> {}
 

@@ -1,4 +1,4 @@
-import { metadata } from '../../data/data'
+import { metadata } from '../../data/metadatas'
 import { TableComponent } from './table/table-component'
 
 export const About = () => {

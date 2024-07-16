@@ -1,5 +1,5 @@
 import { Github, Linkedin } from 'lucide-react'
-import { metadata } from '../../data/data'
+import { metadata } from '../../data/metadatas'
 import { NavbarComponent } from '../header/navbar-component'
 import { ComponentProps } from 'react'
 

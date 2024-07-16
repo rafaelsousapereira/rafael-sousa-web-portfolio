@@ -1,4 +1,4 @@
-import { metadata } from '../../data/data'
+import { metadata } from '../../data/metadatas'
 import { ImageHome } from './image-home'
 import { Footer } from '../footer/footer-component'
 import { NavbarComponent } from '../header/navbar-component'
