@@ -1,4 +1,5 @@
 type MetadataType = {
+  id: number
   greeting: {
     description: string
   }
@@ -18,11 +19,17 @@ type MetadataType = {
   about: {
     titles: string[]
     description: string
-    experience: string[]
+    experience: [
+      {
+        companies: string[]
+        rules: string[]
+      }
+    ]
   }
 }
 
 export const metadata: MetadataType = {
+  id: Number(),
   greeting: {
     description: 'Bem-vindos, ao meu portfólio!',
   },
@@ -46,9 +53,10 @@ export const metadata: MetadataType = {
       Olá, eu sou Rafael Sousa um desenvolvedor full-stack apaixonado por tecnologia e soluções criativas. Com mais de três anos de experiência em desenvolvimento web, tenho trabalhado com diversas tecnologias para criar soluções robustas e escaláveis que atendam às necessidades dos clientes. Eu amo o desafio de encontrar soluções inovadoras e criativas para problemas complexos e estou sempre buscando aprender e crescer como profissional.
     `,
     experience: [
-      'Desenvolvedor Web          Freelancer (Atualmente)',
-      'Desenvolvedor Full Stack   BHUT Soluções em Tecnologia LTDA. (2022 - 2023)',
-      'Desenvolvedor Java           Arius Automação e Programação LTDA. (2021)',
-    ],
+      {
+        companies: ['DEV Freelancer', 'BHUT Tecnologia', 'Arius Sistemas'],
+        rules: ['Desenvolvedor Web', 'Desenvolvedor Full Stack', 'Desenvolvedor JAVA'],
+      }
+    ]
   },
 }

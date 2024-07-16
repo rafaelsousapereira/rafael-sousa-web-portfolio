@@ -1,5 +1,5 @@
 import { metadata } from '../../data/metadatas'
-import { TableComponent } from './table/table-component'
+import { ListExperienceComponent } from './table/list-experience-component'
 
 export const About = () => {
   return (
@@ -12,7 +12,15 @@ export const About = () => {
           {metadata.about.description}
         </p>
 
-        <TableComponent metadata={metadata} />
+        <p className="text-center text-3xl text-violet-500 font-extrabold uppercase">
+          {metadata.about.titles[1]}
+        </p>
+
+        <div className="flex items-center gap-4 text-center max-md:flex-col">
+          <ListExperienceComponent metadata={metadata} id={0} />
+          <ListExperienceComponent metadata={metadata} id={1} />
+          <ListExperienceComponent metadata={metadata} id={2} />
+        </div>
       </div>
     </>
   )

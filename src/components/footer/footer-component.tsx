@@ -9,7 +9,7 @@ export const Footer = (props: FooterComponentProps) => {
   return (
     <footer>
       <nav {...props}>
-        <div className="flex flex-col gap-3 bottom-0 justify-center m-5">
+        <div className="flex flex-col gap-3 bottom-0 justify-center">
           <div className="flex justify-center">
             <NavbarComponent to={metadata.socialMedia.url.linkedin} target="_blank">
               <Linkedin size={35} strokeWidth={1.5} absoluteStrokeWidth />
@@ -20,7 +20,7 @@ export const Footer = (props: FooterComponentProps) => {
             </NavbarComponent>
           </div>
 
-          <p className="text-center mt-8 max-[425px]:text-base max-[320px]:text-sm">
+          <p className="text-center mt-2 max-[425px]:text-base max-[320px]:text-sm">
             &copy;{' '}
             <span className="font-semibold">{new Date().getFullYear()}</span> -
             Desenvolvido por{' '}
