@@ -2,7 +2,6 @@ import { ComponentProps, ForwardedRef, forwardRef } from 'react'
 
 interface TextAreaComponentProps extends ComponentProps<'textarea'> {}
 
-// eslint-disable-next-line react/display-name
 export const TextAreaComponent = forwardRef(
   (props: TextAreaComponentProps, ref: ForwardedRef<HTMLTextAreaElement>) => {
     const { ...textareaProps } = props

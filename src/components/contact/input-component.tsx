@@ -2,7 +2,6 @@ import { ComponentProps, ForwardedRef, forwardRef } from 'react'
 
 interface InputComponentProps extends ComponentProps<'input'> {}
 
-// eslint-disable-next-line react/display-name
 export const InputComponent = forwardRef(
   (props: InputComponentProps, ref: ForwardedRef<HTMLInputElement>) => {
     const { ...inputProps } = props

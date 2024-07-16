@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { NavBar } from './navbar'
+import { NavbarRoutesComponent } from './navbar-routes-component'
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -31,7 +31,7 @@ export const Header = () => {
       <header className="bg-zinc-900/20">
         <nav className="relative text-gray-300 font-semibold">
           <div className="flex items-center justify-between gap-3 py-4 mx-4">
-            <NavBar className="flex max-lg:hidden" />
+            <NavbarRoutesComponent className="flex max-lg:hidden" />
 
             <div
               className="hidden max-lg:block cursor-pointer"
@@ -52,7 +52,7 @@ export const Header = () => {
             <X className="text-4xl mr-1" />
           </div>
 
-          <NavBar
+          <NavbarRoutesComponent
             className="lg:hidden flex flex-col items-center justify-center h-full"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           />
