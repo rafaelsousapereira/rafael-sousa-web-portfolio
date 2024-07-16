@@ -8,7 +8,7 @@ type MetadataType = {
   }
 }
 
-export const TableExperience = ({ metadata }: MetadataType) => {
+export const TableComponent = ({ metadata }: MetadataType) => {
   return (
     <>
       <table className="table-fixed">

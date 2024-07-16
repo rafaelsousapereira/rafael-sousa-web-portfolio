@@ -1,5 +1,5 @@
 import { metadata } from '../../data/data'
-import { TableExperience } from './table/table-experience'
+import { TableComponent } from './table/table-component'
 
 export const About = () => {
   return (
@@ -12,7 +12,7 @@ export const About = () => {
           {metadata.about.description}
         </p>
 
-        <TableExperience metadata={metadata} />
+        <TableComponent metadata={metadata} />
       </div>
     </>
   )
