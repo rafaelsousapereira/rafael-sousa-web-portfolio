@@ -1,4 +1,4 @@
-import { Mail, Send } from 'lucide-react'
+import { Mail, Mailbox, Send } from 'lucide-react'
 import { InputComponent } from './input-component'
 import { TextAreaComponent } from './textarea-componet'
 import { ButtonComponent } from './button-component'
@@ -78,17 +78,14 @@ export const ContactForm = () => {
         className="max-w-md mx-auto mt-11"
       >
         <fieldset id="fieldset-header">
-          <legend className="flex text-2xl text-violet-500 font-extrabold text-center my-8 mx-2">
-            <Mail
-              className="flex mr-1"
-              size={30}
-              strokeWidth={2.5}
-              absoluteStrokeWidth
-            />
-            Entre em contato por e-mail
+          <legend className="flex text-4xl  text-center text-violet-600 font-extrabold my-2">
+            Contato
           </legend>
 
           <div className="max-sm:mx-5">
+            <p className="text-center text-lg text-violet-400 font-normal mb-2">
+              Me envie uma mensagem!
+            </p>
 
             <div className='relative z-0 w-full mb-6 group'>
               <InputComponent
