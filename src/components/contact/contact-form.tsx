@@ -1,4 +1,4 @@
-import { Mail, Mailbox, Send } from 'lucide-react'
+import { Send } from 'lucide-react'
 import { InputComponent } from './input-component'
 import { TextAreaComponent } from './textarea-componet'
 import { ButtonComponent } from './button-component'
@@ -84,7 +84,7 @@ export const ContactForm = () => {
 
           <div className="max-sm:mx-5">
             <p className="text-center text-lg text-violet-400 font-normal mb-2">
-              Me envie uma mensagem!
+            Me envie uma mensagem!
             </p>
 
             <div className='relative z-0 w-full mb-6 group'>
