@@ -1,3 +1,4 @@
+import React from "react"
 import { ComponentProps } from 'react'
 import { metadata } from '../../data/infoPages'
 
@@ -5,6 +6,7 @@ interface ImageHomeProps extends ComponentProps<'img'> {}
 
 export const ImageHome = (props: ImageHomeProps) => {
   return (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       {...props}
       className={

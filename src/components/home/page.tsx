@@ -1,3 +1,4 @@
+import React from 'react'
 import { metadata } from '../../data/infoPages'
 import { ImageHome } from './image-home'
 import { Footer } from '../footer/page'

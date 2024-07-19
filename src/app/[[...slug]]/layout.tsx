@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import { Metadata } from "next"
+import { ReactNode } from "react"
 
 export const metadata: Metadata = {
   title: "Rafael | DEV",
@@ -8,7 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <html lang="pt-br">
