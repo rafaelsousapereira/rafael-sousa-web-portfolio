@@ -55,13 +55,9 @@ const ContactForm = () => {
       message: data.message,
     }
 
-    const options = {
-      publicKey: validPublicKey,
-    }
-    
-    emailjs.init(options)
+    emailjs.init(validPublicKey)
 
-    emailjs.send(validServiceID, validTemplateID, templateParams, options.publicKey)
+    emailjs.send(validServiceID, validTemplateID, templateParams, validPublicKey)
       .then((response) => {
         toast.success("E-mail enviado com sucesso !")
         console.log("SUCCESS: ", response.status, response.text)
