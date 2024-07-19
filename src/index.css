@@ -2,6 +2,6 @@
 @tailwind components;
 @font-face {
   font-family: "Tac One", sans-serif;
-  src: url("./fonts/icon.ttf") format("ttf");
+  src: url("../public/fonts/icon.ttf") format("ttf");
 }
 @tailwind utilities;

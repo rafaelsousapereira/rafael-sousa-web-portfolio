@@ -1,6 +1,6 @@
 import React from "react"
 
-export const PageNotFound = () => {
+const PageNotFound = () => {
   return (
     <>
       <div className="text-center mt-10 text-zinc-300 font-extrabold text-4xl">
@@ -10,3 +10,5 @@ export const PageNotFound = () => {
     </>
   )
 }
+
+export default PageNotFound

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import { Metadata } from "next"
+import React from "react"
 import { ReactNode } from "react"
 
 export const metadata: Metadata = {

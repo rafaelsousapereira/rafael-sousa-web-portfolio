@@ -3,7 +3,7 @@ import { NavLink, NavLinkProps } from 'react-router-dom'
 
 interface NavbarProps extends NavLinkProps {}
 
-export const Navbar = (props: NavbarProps) => {
+const Navbar = (props: NavbarProps) => {
   return (
     <NavLink
       className={(data) =>
@@ -17,3 +17,5 @@ export const Navbar = (props: NavbarProps) => {
     </NavLink>
   )
 }
+
+export default Navbar

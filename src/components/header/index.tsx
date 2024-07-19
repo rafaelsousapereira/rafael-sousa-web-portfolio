@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { Menu, X } from 'lucide-react'
-import { NavbarRoute } from './navbar-routes'
+"use client"
 
-export const Header = () => {
+import React, {  useEffect, useState,   } from 'react'
+import { Menu, X } from 'lucide-react'
+import NavbarRoute from '../navbar-routes'
+
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
@@ -56,3 +58,5 @@ export const Header = () => {
     </>
   )
 }
+
+export default Header

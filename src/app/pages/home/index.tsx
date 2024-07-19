@@ -1,10 +1,10 @@
 import React from 'react'
-import { metadata } from '../../data/infoPages'
-import { ImageHome } from './image-home'
-import { Footer } from '../footer/page'
-import { Navbar } from '../header/navbar'
+import { metadata } from '../../../data/infoPages'
+import Footer from '../../../components/footer'
+import Navbar from '../../../components/navbar'
+import ImageHome from '../../../components/image-home'
 
-export const Home = () => {
+const Home = () => {
   return (
     <div className="flex flex-col mx-8 gap-2 text-gray-300">
       <main className="grid lg:grid-cols-2">
@@ -46,3 +46,5 @@ export const Home = () => {
     </div>
   )
 }
+
+export default Home

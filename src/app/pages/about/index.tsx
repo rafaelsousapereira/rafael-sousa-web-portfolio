@@ -1,7 +1,9 @@
-import { metadata } from '../../data/infoPages'
-import { ListExperience } from './list-experience'
+"use client"
 
-export const About = () => {
+import { metadata } from '../../../data/infoPages'
+import ListExperience from '../../../components/list-experience'
+
+const About = () => {
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-8 text-zinc-300 m-4">
@@ -25,3 +27,5 @@ export const About = () => {
     </>
   )
 }
+
+export default About

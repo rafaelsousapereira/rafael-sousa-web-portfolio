@@ -1,11 +1,13 @@
+"use client"
+
 import { Github, Linkedin } from 'lucide-react'
 import { metadata } from '../../data/infoPages'
-import { Navbar } from '../header/navbar'
+import Navbar from '../navbar'
 import { ComponentProps } from 'react'
 
 interface FooterComponentProps extends ComponentProps<'nav'> { }
 
-export const Footer = (props: FooterComponentProps) => {
+const Footer = (props: FooterComponentProps) => {
   return (
     <footer>
       <nav {...props}>
@@ -34,3 +36,5 @@ export const Footer = (props: FooterComponentProps) => {
     </footer>
   )
 }
+
+export default Footer

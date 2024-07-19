@@ -1,11 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import { Header } from "./components/header/page"
-import { Home } from "./components/home/page";
-import { About } from "./components/about/page";
-import { ContactForm } from "./components/contact/page";
-import { PageNotFound } from "./components/pages-error/page";
+"use client"
 
-export const App = () => {
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Header from "./components/header"
+import Home from "./app/pages/home";
+import About from "./app/pages/about";
+import ContactForm from "./app/pages/contact";
+import PageNotFound from "./components/pages-error";
+
+const App = () => {
   return (
     <>
       <BrowserRouter>
@@ -20,3 +22,5 @@ export const App = () => {
     </>
   )
 }
+
+export default App

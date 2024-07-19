@@ -16,7 +16,7 @@ type MetadataType = {
   }
 }
 
-export const ListExperience = ({ id, metadata }: MetadataType) => {
+const ListExperience = ({ id, metadata }: MetadataType) => {
 
   return (
     <>
@@ -40,3 +40,5 @@ export const ListExperience = ({ id, metadata }: MetadataType) => {
     </>
   )
 }
+
+export default ListExperience

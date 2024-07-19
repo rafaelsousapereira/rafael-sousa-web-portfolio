@@ -1,16 +1,19 @@
+"use client"
+
 import { Send } from 'lucide-react'
-import { InputForm } from './input-form'
-import { TextAreaForm } from './textarea-form'
-import { ButtonForm } from './button-form'
+import InputForm from '../../../components/input-form'
+import TextAreaForm from '../../../components/textarea-form'
+import ButtonForm from '../../../components/button-form'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useEffect } from 'react'
-import { LabelForm } from './label-form'
+
+import LabelForm from '../../../components/label-form'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 import emailjs from '@emailjs/browser'
+import { useEffect } from 'react'
 
 const submitEmailFormSchema = z.object({
   name: z
@@ -23,7 +26,7 @@ const submitEmailFormSchema = z.object({
 
 type SubmitEmailFormSchema = z.infer<typeof submitEmailFormSchema>
 
-export const ContactForm = () => {
+const ContactForm = () => {
  
   const {
     register,
@@ -149,3 +152,5 @@ export const ContactForm = () => {
     </div>
   )
 }
+
+export default ContactForm

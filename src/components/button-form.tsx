@@ -1,8 +1,9 @@
+import React from 'react'
 import { ComponentProps } from 'react'
 
 interface ButtonComponentProps extends ComponentProps<'button'> {}
 
-export const ButtonForm = (buttonProps: ButtonComponentProps) => {
+const ButtonForm = (buttonProps: ButtonComponentProps) => {
   return (
     <div className="mt-5">
       <button
@@ -14,3 +15,5 @@ export const ButtonForm = (buttonProps: ButtonComponentProps) => {
     </div>
   )
 }
+
+export default ButtonForm
