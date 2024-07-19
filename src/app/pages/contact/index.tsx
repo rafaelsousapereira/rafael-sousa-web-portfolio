@@ -41,12 +41,12 @@ const ContactForm = () => {
 
   const handleSendEmail = (data: SubmitEmailFormSchema) => {
 
-    const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
-    const serviceID: string | undefined = process.env.NEXT_PUBLIC_SERVICE
-    const templateID: string | undefined = process.env.NEXT_PUBLIC_TEMPLATE
+    const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY
+    const SERVICE_ID: string | undefined = process.env.NEXT_PUBLIC_SERVICE_ID
+    const TEMPLATE_ID: string | undefined = process.env.NEXT_PUBLIC_TEMPLATE_ID
 
-    const validServiceID = serviceID ?? "defaultServiceID"
-    const validTemplateID = templateID ?? "defaultTemplateID"
+    const validServiceID = SERVICE_ID ?? "defaultServiceID"
+    const validTemplateID = TEMPLATE_ID ?? "defaultTemplateID"
 
     const templateParams = {
       from_name: data.name,
@@ -55,7 +55,7 @@ const ContactForm = () => {
     }
 
     const options = {
-      publicKey: publicKey,
+      publicKey: PUBLIC_KEY,
     }
     
     emailjs.init(options)
