@@ -41,7 +41,7 @@ const ContactForm = () => {
 
   const handleSendEmail = (data: SubmitEmailFormSchema) => {
 
-    const USER_ID: string | undefined = process.env.NEXT_PUBLIC_EMAILJS_USER_ID ?? ""
+    const USER_ID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID
     const SERVICE_ID: string | undefined = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? ""
     const TEMPLATE_ID: string | undefined = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? ""
 
@@ -51,8 +51,6 @@ const ContactForm = () => {
       message: data.message,
       to_name: 'Rafael Sousa Pereira | Support',
     }
-
-    emailjs.init(USER_ID)
 
     emailjs.send(
       SERVICE_ID, TEMPLATE_ID, templateParams, {
