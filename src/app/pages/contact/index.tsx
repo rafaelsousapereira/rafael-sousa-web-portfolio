@@ -41,11 +41,11 @@ const ContactForm = () => {
 
   const handleSendEmail = (data: SubmitEmailFormSchema) => {
 
-    const PUBLIC_KEY: string | undefined = process.env.NEXT_PUBLIC_PUBLIC_KEY
+    const PUBLICKEY: string | undefined = process.env.NEXT_PUBLIC_PUBLICKEY
     const SERVICE_ID: string | undefined = process.env.NEXT_PUBLIC_SERVICE_ID
     const TEMPLATE_ID: string | undefined = process.env.NEXT_PUBLIC_TEMPLATE_ID
 
-    const validPublicKey = PUBLIC_KEY ?? "defaultTemplateID"
+    const validPublicKey = PUBLICKEY ?? "defaultTemplateID"
     const validServiceID = SERVICE_ID ?? "defaultServiceID"
     const validTemplateID = TEMPLATE_ID ?? "defaultTemplateID"
 

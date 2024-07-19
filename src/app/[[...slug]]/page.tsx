@@ -3,7 +3,7 @@ import '../../../src/index.css'
 import { ClientOnly } from './client'
 
 export function generateStaticParams() {
-  return [ { slug: [""] } ]
+  return [ { slug: [""] }, { slug: ["about"] }, { slug: ["contact"] } ]
 }
  
 export default function Page() {
