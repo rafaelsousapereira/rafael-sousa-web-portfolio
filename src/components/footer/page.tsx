@@ -1,6 +1,6 @@
 import { Github, Linkedin } from 'lucide-react'
 import { metadata } from '../../data/infoPages'
-import { NavbarComponent } from '../header/navbar'
+import { Navbar } from '../header/navbar'
 import { ComponentProps } from 'react'
 
 interface FooterComponentProps extends ComponentProps<'nav'> { }
@@ -11,13 +11,13 @@ export const Footer = (props: FooterComponentProps) => {
       <nav {...props}>
         <div className="flex flex-col gap-3 bottom-0 justify-center">
           <div className="flex justify-center">
-            <NavbarComponent to={metadata.socialMedia.url.linkedin} target='_blank'>
+            <Navbar to={metadata.socialMedia.url.linkedin} target='_blank'>
               <Linkedin size={35} strokeWidth={1.5} absoluteStrokeWidth />
-            </NavbarComponent>
+            </Navbar>
 
-            <NavbarComponent to={metadata.socialMedia.url.github} target='_blank'>
+            <Navbar to={metadata.socialMedia.url.github} target='_blank'>
               <Github size={35} strokeWidth={1.5} absoluteStrokeWidth />
-            </NavbarComponent>
+            </Navbar>
           </div>
 
           <p className="text-center mt-2 max-[425px]:text-base max-[320px]:text-sm">

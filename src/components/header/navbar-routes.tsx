@@ -2,9 +2,9 @@ import { ComponentProps } from 'react'
 import { Navbar } from './navbar'
 import { Contact, Home, User } from 'lucide-react'
 
-interface NavBarProps extends ComponentProps<'ul'> {}
+interface NavbarRouteProps extends ComponentProps<'ul'> {}
 
-export const NavbarRoute = (props: NavBarProps) => {
+export const NavbarRoute = (props: NavbarRouteProps) => {
   const routes = [
     { url: '/', label: 'Home', icon: <Home /> },
     { url: '/about', label: 'Sobre', icon: <User /> },
