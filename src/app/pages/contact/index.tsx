@@ -45,6 +45,7 @@ const ContactForm = () => {
     const SERVICE_ID: string | undefined = process.env.NEXT_PUBLIC_SERVICE_ID
     const TEMPLATE_ID: string | undefined = process.env.NEXT_PUBLIC_TEMPLATE_ID
 
+    const validPublicKey = PUBLIC_KEY ?? "defaultTemplateID"
     const validServiceID = SERVICE_ID ?? "defaultServiceID"
     const validTemplateID = TEMPLATE_ID ?? "defaultTemplateID"
 
@@ -55,7 +56,7 @@ const ContactForm = () => {
     }
 
     const options = {
-      publicKey: PUBLIC_KEY,
+      publicKey: validPublicKey,
     }
     
     emailjs.init(options)
