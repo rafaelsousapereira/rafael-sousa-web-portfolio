@@ -2,7 +2,7 @@ import { NavLink, NavLinkProps } from 'react-router-dom'
 
 interface NavMenuProps extends NavLinkProps {}
 
-export const NavbarComponent = (props: NavMenuProps) => {
+export const Navbar = (props: NavMenuProps) => {
   return (
     <NavLink
       className={(data) =>

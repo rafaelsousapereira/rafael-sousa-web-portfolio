@@ -1,18 +1,19 @@
 import { ComponentProps, ForwardedRef, forwardRef } from 'react'
 
-interface TextAreaComponentProps extends ComponentProps<'textarea'> {}
+interface InputComponentProps extends ComponentProps<'input'> {}
 
-export const TextAreaComponent = forwardRef(
-  (props: TextAreaComponentProps, ref: ForwardedRef<HTMLTextAreaElement>) => {
-    const { ...textareaProps } = props
+export const InputForm = forwardRef(
+  (props: InputComponentProps, ref: ForwardedRef<HTMLInputElement>) => {
+    const { ...inputProps } = props
 
     return (
-      <textarea
-        {...textareaProps}
+      <input
+        {...inputProps}
         ref={ref}
         className="block py-2.5 px-0 w-full text-lg text-gray-400 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-violet-500 focus:outline-none focus:ring-0 focus:border-violet-600 peer"
-        name={textareaProps.name}
-        id={textareaProps.id}
+        type={inputProps.type}
+        name={inputProps.name}
+        id={inputProps.id}
         placeholder=" "
       />
     )

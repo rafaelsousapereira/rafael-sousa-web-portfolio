@@ -2,7 +2,7 @@ import { ComponentProps } from 'react'
 
 interface ButtonComponentProps extends ComponentProps<'button'> {}
 
-export const ButtonComponent = (buttonProps: ButtonComponentProps) => {
+export const ButtonForm = (buttonProps: ButtonComponentProps) => {
   return (
     <div className="mt-5">
       <button

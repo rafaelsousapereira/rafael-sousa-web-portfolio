@@ -1,10 +1,10 @@
 import { ComponentProps } from 'react'
-import { NavbarComponent } from './navbar-component'
+import { Navbar } from './navbar'
 import { Contact, Home, User } from 'lucide-react'
 
 interface NavBarProps extends ComponentProps<'ul'> {}
 
-export const NavbarRoutesComponent = (props: NavBarProps) => {
+export const NavbarRoute = (props: NavBarProps) => {
   const routes = [
     { url: '/', label: 'Home', icon: <Home /> },
     { url: '/about', label: 'Sobre', icon: <User /> },
@@ -13,11 +13,11 @@ export const NavbarRoutesComponent = (props: NavBarProps) => {
 
   return (
     <ul {...props}>
-      {routes.map((item) => (
-        <li key={item.url}>
-          <NavbarComponent to={item.url}>
-            {item.icon} {item.label}
-          </NavbarComponent>
+      {routes.map((route) => (
+        <li key={route.url}>
+          <Navbar to={route.url}>
+            {route.icon} {route.label}
+          </Navbar>
         </li>
       ))}
     </ul>

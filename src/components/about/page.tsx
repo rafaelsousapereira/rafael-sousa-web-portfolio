@@ -1,5 +1,5 @@
-import { metadata } from '../../data/metadatas'
-import { ListExperienceComponent } from './list-experience-component'
+import { metadata } from '../../data/infoPages'
+import { ListExperience } from './list-experience'
 
 export const About = () => {
   return (
@@ -17,9 +17,9 @@ export const About = () => {
         </p>
 
         <div className="flex items-center gap-4 text-center max-md:flex-col">
-          <ListExperienceComponent metadata={metadata} id={0} />
-          <ListExperienceComponent metadata={metadata} id={1} />
-          <ListExperienceComponent metadata={metadata} id={2} />
+          <ListExperience metadata={metadata} id={0} />
+          <ListExperience metadata={metadata} id={1} />
+          <ListExperience metadata={metadata} id={2} />
         </div>
       </div>
     </>

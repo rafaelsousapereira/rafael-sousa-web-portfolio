@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { NavbarRoutesComponent } from './navbar-routes-component'
+import { NavbarRoute } from './navbar-routes'
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -28,15 +28,13 @@ export const Header = () => {
 
   return (
     <>
-      <header className="bg-zinc-900/90 sticky top-0">
-        <nav className="text-gray-300 font-semibold">
+      <header className="sticky top-0 z-10 bg-zinc-900/90">
+        <nav className="relative text-gray-300 font-semibold">
           <div className="flex items-center justify-between gap-3 py-4 mx-4">
-            <NavbarRoutesComponent className="flex max-lg:hidden" />
+            <NavbarRoute className="flex max-lg:hidden" />
 
-            <div
-              className="hidden max-lg:block cursor-pointer"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
+            <div className="hidden max-lg:block cursor-pointer" 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}>
               <Menu className="text-4xl" />
             </div>
           </div>
@@ -45,16 +43,13 @@ export const Header = () => {
 
       {isMenuOpen && (
         <nav className="absolute top-0 right-0 left-0 bottom-0 lg:bottom-auto bg-gray-300 bg-gradient-to-b from-gray-300 to-slate-400 text-gray-900 font-extrabold z-[1]">
-          <div
-            className="hidden max-lg:block fixed left-0 cursor-pointer py-4 mx-4"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
+          <div className="hidden max-lg:block fixed top-0 cursor-pointer py-4 mx-4" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <X className="text-4xl mr-1" />
           </div>
 
-          <NavbarRoutesComponent
-            className="lg:hidden flex flex-col items-center justify-center h-full"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          <NavbarRoute className="lg:hidden flex flex-col items-center justify-center h-full" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)} 
           />
         </nav>
       )}

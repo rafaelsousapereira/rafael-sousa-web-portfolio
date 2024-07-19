@@ -1,15 +1,16 @@
 import { Send } from 'lucide-react'
-import { InputComponent } from './input-component'
-import { TextAreaComponent } from './textarea-componet'
-import { ButtonComponent } from './button-component'
+import { InputForm } from './input-form'
+import { TextAreaForm } from './textarea-form'
+import { ButtonForm } from './button-form'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useEffect } from 'react'
-import { LabelComponent } from './label-component'
-import emailjs from '@emailjs/browser'
+import { LabelForm } from './label-form'
 import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'
+
+import emailjs from '@emailjs/browser'
 
 const submitEmailFormSchema = z.object({
   name: z
@@ -36,9 +37,13 @@ export const ContactForm = () => {
   })
 
   const handleSendEmail = (data: SubmitEmailFormSchema) => {
-    const publicKey = import.meta.env.VITE_APP_PUBLIC_KEY
-    const serviceID = import.meta.env.VITE_APP_SERVICE
-    const templateID = import.meta.env.VITE_APP_TEMPLATE
+
+    const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY
+    const serviceID: string | undefined = process.env.NEXT_PUBLIC_SERVICE
+    const templateID: string | undefined = process.env.NEXT_PUBLIC_TEMPLATE
+
+    const validServiceID = serviceID ?? "defaultServiceID"
+    const validTemplateID = templateID ?? "defaultTemplateID"
 
     const templateParams = {
       from_name: data.name,
@@ -52,7 +57,7 @@ export const ContactForm = () => {
     
     emailjs.init(options)
 
-    emailjs.send(serviceID, templateID, templateParams, options.publicKey)
+    emailjs.send(validServiceID, validTemplateID, templateParams, options.publicKey)
       .then((response) => {
         toast.success("E-mail enviado com sucesso !")
         console.log("SUCCESS: ", response.status, response.text)
@@ -88,7 +93,7 @@ export const ContactForm = () => {
             </p>
 
             <div className='relative z-0 w-full mb-6 group'>
-              <InputComponent
+              <InputForm
                 {...register('name')}
                 id="event-subject"
                 type="text"
@@ -100,11 +105,11 @@ export const ContactForm = () => {
                 </p>
               )}
 
-              <LabelComponent>Digite Seu Nome</LabelComponent>
+              <LabelForm>Digite Seu Nome</LabelForm>
             </div>
             
             <div className='relative z-0 w-full mb-6 group'>
-              <InputComponent
+              <InputForm
                 {...register('email')}
                 id="event-email"
                 type="email"
@@ -114,11 +119,11 @@ export const ContactForm = () => {
                 <p className="text-sm text-red-500">{errors.email.message}</p>
               )}
 
-              <LabelComponent>Digite Seu E-mail</LabelComponent>
+              <LabelForm>Digite Seu E-mail</LabelForm>
             </div>
 
             <div className='relative z-0 w-full mb-6 group'>
-              <TextAreaComponent
+              <TextAreaForm
                 {...register('message')}
                 id="event-message"
                 aria-invalid={errors.message?.message ? 'true' : 'false'}
@@ -126,10 +131,10 @@ export const ContactForm = () => {
               {errors.message && (
                 <p className="text-sm text-red-500">{errors.message?.message}</p>
               )}
-              <LabelComponent>Digite Sua Mensagem</LabelComponent>
+              <LabelForm>Digite Sua Mensagem</LabelForm>
             </div>
 
-            <ButtonComponent type="submit">
+            <ButtonForm type="submit">
               <Send
                 className="flex justify-center my-1 mr-1"
                 size={20}
@@ -137,7 +142,7 @@ export const ContactForm = () => {
                 absoluteStrokeWidth
               />
               Enviar Mensagem
-            </ButtonComponent>
+            </ButtonForm>
           </div>
         </fieldset>
       </form>
