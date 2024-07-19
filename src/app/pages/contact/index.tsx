@@ -41,30 +41,31 @@ const ContactForm = () => {
 
   const handleSendEmail = (data: SubmitEmailFormSchema) => {
 
-    const PUBLICKEY: string | undefined = process.env.NEXT_PUBLIC_PUBLICKEY
-    const SERVICE_ID: string | undefined = process.env.NEXT_PUBLIC_SERVICE_ID
-    const TEMPLATE_ID: string | undefined = process.env.NEXT_PUBLIC_TEMPLATE_ID
-
-    const validPublicKey = PUBLICKEY ?? "defaultTemplateID"
-    const validServiceID = SERVICE_ID ?? "defaultServiceID"
-    const validTemplateID = TEMPLATE_ID ?? "defaultTemplateID"
+    const USER_ID: string | undefined = process.env.NEXT_PUBLIC_EMAILJS_USER_ID ?? ""
+    const SERVICE_ID: string | undefined = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? ""
+    const TEMPLATE_ID: string | undefined = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? ""
 
     const templateParams = {
       from_name: data.name,
       email: data.email,
       message: data.message,
+      to_name: 'Rafael Sousa Pereira | Support',
     }
 
-    emailjs.init(validPublicKey)
+    emailjs.init(USER_ID)
 
-    emailjs.send(validServiceID, validTemplateID, templateParams, validPublicKey)
-      .then((response) => {
+    emailjs.send(
+      SERVICE_ID, TEMPLATE_ID, templateParams, {
+        publicKey: USER_ID,
+      }
+    )
+    .then((response) => {
         toast.success("E-mail enviado com sucesso !")
-        console.log("SUCCESS: ", response.status, response.text)
+        console.log("'Message has been sent': ", response.status, response.text)
       })
       .catch((error) => {
-        toast.error("Erro ao enviar e-mail, Tente novamente !")
-        console.error("ERROR: ", error)
+        toast.error("Erro ao enviar e-mail, Tente novamente")
+        console.error("Error sending message, try again later: ", error)
       }
     )
   }

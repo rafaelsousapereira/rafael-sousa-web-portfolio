@@ -4,9 +4,9 @@ const nextConfig = {
   distDir: 'build',
   reactStrictMode: true,
   env:{
-    PUBLICKEY: process.env.NEXT_PUBLIC_PUBLICKEY,
-    SERVICE_ID: process.env.NEXT_PUBLIC_SERVICE_ID,
-    TEMPLATE_ID: process.env.NEXT_PUBLIC_TEMPLATE_ID,
+    NEXT_PUBLIC_EMAILJS_USER_ID: process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
+    NEXT_PUBLIC_EMAILJS_SERVICE_ID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+    NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
   }
 }
 
