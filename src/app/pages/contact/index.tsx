@@ -41,7 +41,7 @@ const ContactForm = () => {
 
   const handleSendEmail = (data: SubmitEmailFormSchema) => {
 
-    const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY
+    const PUBLIC_KEY: string | undefined = process.env.NEXT_PUBLIC_PUBLIC_KEY
     const SERVICE_ID: string | undefined = process.env.NEXT_PUBLIC_SERVICE_ID
     const TEMPLATE_ID: string | undefined = process.env.NEXT_PUBLIC_TEMPLATE_ID
 
