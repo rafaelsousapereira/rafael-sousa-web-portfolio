@@ -2,6 +2,7 @@
 import { Metadata } from "next"
 import React from "react"
 import { ReactNode } from "react"
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata: Metadata = {
   title: "Rafael | DEV",
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body 
         className="bg-zinc-950/90 antialiased selection:bg-violet-400 selection:text-zinc-800"
       >
+        <GoogleAnalytics gaId={`${process.env.NEXT_PUBLIC_GA_TRACKING}`} />
         <div id="root">{children}</div>
         
       </body>

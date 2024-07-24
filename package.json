@@ -12,6 +12,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^3.9.0",
+    "@next/third-parties": "^14.2.5",
     "eslint-config-next": "^14.2.5",
     "lucide-react": "^0.367.0",
     "next": "^14.2.5",
