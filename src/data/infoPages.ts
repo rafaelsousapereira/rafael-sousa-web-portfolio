@@ -54,7 +54,7 @@ export const metadata: MetadataType = {
     `,
     experience: [
       {
-        companies: ['DEV Freelancer', 'BHUT Tecnologia', 'Arius Sistemas'],
+        companies: ['DEV Freelancer', 'Prestador de Serviços', 'Arius Sistemas'],
         rules: ['Desenvolvedor Web', 'Desenvolvedor Full Stack', 'Desenvolvedor JAVA'],
       }
     ]
