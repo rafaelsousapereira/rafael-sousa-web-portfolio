@@ -3,6 +3,8 @@
 import React, {  useEffect, useState,   } from 'react'
 import { Menu, X } from 'lucide-react'
 import NavbarRoute from '../navbar-routes'
+import { NextSeo } from 'next-seo'
+import { NEXT_SEO_DEFAULT } from '../../data/next-seo-config'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -55,6 +57,8 @@ const Header = () => {
           />
         </nav>
       )}
+
+      <NextSeo {...NEXT_SEO_DEFAULT} />
     </>
   )
 }
