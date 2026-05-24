@@ -57,15 +57,12 @@ const ContactForm = () => {
         publicKey: USER_ID,
       }
     )
-    .then((response) => {
+    .then(() => {
         toast.success("E-mail enviado com sucesso !")
-        console.log("'Message has been sent': ", response.status, response.text)
       })
-      .catch((error) => {
+      .catch(() => {
         toast.error("Erro ao enviar e-mail, Tente novamente")
-        console.error("Error sending message, try again later: ", error)
-      }
-    )
+      })
   }
 
   useEffect(() => {

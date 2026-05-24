@@ -32,8 +32,10 @@ dist-ssr
 # production
 /build
 
-# misc
+# Environment variables (never commit secrets)
 .env
+.env.*
+!.env.example
 
 # next
 .next

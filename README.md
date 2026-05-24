@@ -17,12 +17,26 @@ Este projeto foi construído utilizando as seguintes tecnologias:
 - **Tailwind CSS**: Um framework de CSS utilitário para criar designs personalizados sem sair do HTML.
 - **ESLint**: Uma ferramenta de análise de código estática para identificar padrões problemáticos no código JavaScript.
 
+## Variáveis de ambiente
+
+Copie `.env.example` para `.env.local` e preencha os valores. Detalhes em [docs/environment-variables.md](docs/environment-variables.md).
+
+| Variável | Uso |
+|----------|-----|
+| `NEXT_PUBLIC_EMAILJS_USER_ID` | Chave pública EmailJS (formulário de contato) |
+| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | ID do serviço EmailJS |
+| `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | ID do template EmailJS |
+| `NEXT_PUBLIC_GA_TRACKING` | ID de medição do Google Analytics |
+
+Arquivos `.env*` (exceto `.env.example`) não devem ser commitados.
+
 ## Desenvolvimento
 
 Para executar este projeto localmente, siga estas etapas:
 
 1. Clone este repositório em sua máquina local.
-2. Instale as dependências usando npm ou yarn:
+2. Copie `.env.example` para `.env.local` e configure as variáveis.
+3. Instale as dependências usando npm ou yarn:
    ```
    npm install
    ```
@@ -30,7 +44,7 @@ Para executar este projeto localmente, siga estas etapas:
    ```
    yarn
    ```
-3. Execute o projeto em modo de desenvolvimento:
+4. Execute o projeto em modo de desenvolvimento:
    ```
    npm run dev
    ```
@@ -38,8 +52,18 @@ Para executar este projeto localmente, siga estas etapas:
    ```
    yarn dev
    ```
-4. Abra seu navegador e acesse [http://localhost:5173/](http://localhost:5173/) para ver o portfólio em ação.
-5. Este projeto está hospedado na [Vercel](https://vercel.com/) para ver o portifólio em ação online [clique aqui.](https://rafaelsousa.vercel.app/)
+5. Abra [http://localhost:3000/](http://localhost:3000/) (modo desenvolvimento com `npm run dev`).
+
+**Preview da build de produção** (export estático em `build/`):
+
+```bash
+npm run build
+npm start
+```
+
+`next start` não se aplica aqui: o projeto usa `output: 'export'` em `next.config.mjs`.
+
+6. Este projeto está hospedado na [Vercel](https://vercel.com/) para ver o portifólio em ação online [clique aqui.](https://rafaelsousa.vercel.app/)
 
 ## Contribuições
 
