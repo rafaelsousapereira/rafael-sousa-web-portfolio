@@ -23,14 +23,14 @@ const ListExperience = ({ id, metadata }: MetadataType) => {
       <span className="w-10 h-10 rounded-full mb-0">
         <Building2 size={35} strokeWidth={1.5} absoluteStrokeWidth />
       </span>
-      <div className="text-xl font-medium text-white">
+      <div className="text-xl font-medium text-foreground">
         {metadata.about.experience.map((company) => (
           <div key={company.companies[id]}>
             <div>
               {company.companies[id]}
             </div>
             {metadata.about.experience.map((rule) => (
-              <div key={rule.rules[id]} className="text-lg text-gray-500">
+              <div key={rule.rules[id]} className="text-lg text-muted-foreground">
                 {rule.rules[id]}
               </div>
             ))}

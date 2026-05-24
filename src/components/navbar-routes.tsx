@@ -1,8 +1,8 @@
 import { ComponentProps } from 'react'
-import Navbar from './navbar'
 import { Contact, Home, User } from 'lucide-react'
+import NavLink from '@/components/nav-link'
 
-interface NavbarRouteProps extends ComponentProps<'ul'> {}
+type NavbarRouteProps = ComponentProps<'ul'>
 
 const NavbarRoute = (props: NavbarRouteProps) => {
   const routes = [
@@ -15,9 +15,9 @@ const NavbarRoute = (props: NavbarRouteProps) => {
     <ul {...props}>
       {routes.map((route) => (
         <li key={route.url}>
-          <Navbar to={route.url}>
+          <NavLink href={route.url}>
             {route.icon} {route.label}
-          </Navbar>
+          </NavLink>
         </li>
       ))}
     </ul>

@@ -9,12 +9,10 @@ Seja bem-vindos(as), este é meu web site pessoal, desenvolvido com React, TypeS
 
 Este projeto foi construído utilizando as seguintes tecnologias:
 
-- **Vite**: Um construtor de aplicações web rápido que utiliza a importação de ESM (ECMAScript Modules) nativa do navegador para desenvolvimento mais eficiente.
 - **TypeScript**: Uma linguagem de programação que é um superset de JavaScript, adicionando tipagem estática opcional.
-- **React**: Uma biblioteca JavaScript para construir interfaces de usuário.
-- **React Router DOM**: Uma biblioteca de roteamento para React que permite navegação entre componentes de forma declarativa.
+- **Next.js 15** (App Router) + **React 19**: Framework e UI (ver [docs/runtime-migration-notes.md](docs/runtime-migration-notes.md)).
 - **Lucide React**: Uma coleção de ícones SVG para uso em projetos React.
-- **Tailwind CSS**: Um framework de CSS utilitário para criar designs personalizados sem sair do HTML.
+- **Tailwind CSS v4** + **shadcn/ui**: Estilização e primitivos (ver [docs/ui-foundation.md](docs/ui-foundation.md)).
 - **ESLint**: Uma ferramenta de análise de código estática para identificar padrões problemáticos no código JavaScript.
 
 ## Variáveis de ambiente
