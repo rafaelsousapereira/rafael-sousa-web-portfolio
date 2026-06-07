@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react'
 import { metadata } from '@/data/infoPages'
-import { cn } from '@/lib/utils'
+import { cn } from '@/shared/lib/utils'
 
 type ImageHomeProps = ComponentProps<'img'>
 

@@ -3,8 +3,8 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { Mulish } from 'next/font/google'
 import { GoogleAnalytics } from '@next/third-parties/google'
-import Header from '@/components/header'
-import { cn } from '@/lib/utils'
+import SiteHeader from '@/presentation/components/layout/site-header'
+import { cn } from '@/shared/lib/utils'
 import '@/index.css'
 
 const mulish = Mulish({
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="pt-BR" className={cn('dark font-sans', mulish.variable)}>
       <body className="min-h-screen selection:bg-primary/40 selection:text-primary-foreground">
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_TRACKING ?? ''} />
-        <Header />
+        <SiteHeader />
         {children}
       </body>
     </html>

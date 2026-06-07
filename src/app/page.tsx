@@ -1,44 +1,24 @@
-import Link from 'next/link'
-import { metadata } from '@/data/infoPages'
-import Footer from '@/components/footer'
-import ImageHome from '@/components/image-home'
-import { buttonVariants } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import Hero from '@/presentation/components/sections/hero'
+import AboutSection from '@/presentation/components/sections/about'
+import ExperienceSection from '@/presentation/components/sections/experience'
+import ProjectsSection from '@/presentation/components/sections/projects'
+import ArticlesSection from '@/presentation/components/sections/articles'
+import ContactSection from '@/presentation/components/sections/contact'
+import SiteFooter from '@/presentation/components/layout/site-footer'
 
 export default function HomePage() {
   return (
-    <div className="page-container flex flex-col gap-2 py-6">
-      <main className="grid gap-8 lg:grid-cols-2 lg:gap-12">
-        <section className="flex flex-col gap-5">
-          <p className="text-lead">{metadata.greeting.description}</p>
-
-          <h1 className="heading-display">
-            {metadata.person.name}{' '}
-            <span className="heading-display-accent block">
-              {metadata.person.sirName}
-            </span>
-          </h1>
-
-          <p className="text-role">{metadata.person.position}</p>
-
-          <p className="text-body">{metadata.person.description}</p>
-
-          <div className="pt-4">
-            <Link
-              href="/about"
-              className={cn(buttonVariants({ size: 'lg' }), 'w-full sm:w-auto')}
-            >
-              Saiba Mais!
-            </Link>
-          </div>
-        </section>
-
-        <div className="flex items-start justify-center lg:justify-end">
-          <ImageHome />
-        </div>
+    <div className="flex flex-col">
+      <main>
+        <Hero />
+        <AboutSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <ArticlesSection />
+        <ContactSection />
       </main>
 
-      <Footer />
+      <SiteFooter />
     </div>
   )
 }

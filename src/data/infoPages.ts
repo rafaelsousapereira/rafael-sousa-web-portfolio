@@ -16,16 +16,6 @@ type MetadataType = {
       github: string
     }
   }
-  about: {
-    titles: string[]
-    description: string
-    experience: [
-      {
-        companies: string[]
-        rules: string[]
-      }
-    ]
-  }
 }
 
 export const metadata: MetadataType = {
@@ -46,17 +36,5 @@ export const metadata: MetadataType = {
       linkedin: 'https://www.linkedin.com/in/rafael-sousa-pereira-/',
       github: 'https://github.com/rafaelsousapereira/',
     },
-  },
-  about: {
-    titles: ['Sobre mim', 'Experiência Profissional'],
-    description: `
-      Olá, eu sou Rafael Sousa um desenvolvedor full-stack apaixonado por tecnologia e soluções criativas. Com mais de três anos de experiência em desenvolvimento web, tenho trabalhado com diversas tecnologias para criar soluções robustas e escaláveis que atendam às necessidades dos clientes. Eu amo o desafio de encontrar soluções inovadoras e criativas para problemas complexos e estou sempre buscando aprender e crescer como profissional.
-    `,
-    experience: [
-      {
-        companies: ['DEV Freelancer', 'Prestador de Serviços', 'Arius Sistemas'],
-        rules: ['Desenvolvedor Web', 'Desenvolvedor Full Stack', 'Desenvolvedor JAVA'],
-      }
-    ]
   },
 }
