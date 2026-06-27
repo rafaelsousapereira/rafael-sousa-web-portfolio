@@ -195,7 +195,7 @@ export const translations = {
     },
     stack: {
       subtitle:
-        'Java 21, Spring Boot, RabbitMQ, PostgreSQL, Docker, Azure e AWS organizados por domínio de entrega.',
+        'Arquitetura de software, sistemas distribuídos, mensageria, persistência de dados e plataformas cloud organizados por domínio de especialização.',
     },
     social: {
       linkedin: 'LinkedIn',

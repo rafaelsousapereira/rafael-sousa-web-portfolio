@@ -138,28 +138,52 @@ const techFocus = [
 
 const technicalStackDefinition: TechnicalStackGroupDefinition[] = [
   {
-    id: 'backend-runtime',
+    id: 'backend-engineering',
     title: {
-      'pt-BR': 'Core Backend',
+      'pt-BR': 'Engenharia Backend',
       'en-US': 'Backend Engineering',
     },
-    items: ['Java 21', 'Spring Boot', 'REST APIs', 'Microservices'],
+    items: [
+      'Java 21',
+      'Spring Boot',
+      'REST APIs',
+      'Microservices',
+    ],
   },
   {
-    id: 'messaging-data',
+    id: 'distributed-systems',
     title: {
-      'pt-BR': 'Messaging & Data',
+      'pt-BR': 'Sistemas Distribuídos',
       'en-US': 'Distributed Systems',
     },
-    items: ['Apache Kafka', 'RabbitMQ', 'PostgreSQL'],
+    items: [
+      'Apache Kafka',
+      'RabbitMQ',
+      'Event-Driven Architecture',
+      'System Integration',
+    ],
   },
   {
-    id: 'platform-cloud',
+    id: 'data-platforms',
     title: {
-      'pt-BR': 'Platform & Cloud',
-      'en-US': 'Platform & Cloud',
+      'pt-BR': 'Dados & Persistência',
+      'en-US': 'Data & Persistence',
     },
-    items: ['Docker', 'Azure', 'AWS'],
+    items: [
+      'PostgreSQL',
+    ],
+  },
+  {
+    id: 'cloud-platform',
+    title: {
+      'pt-BR': 'Cloud & Plataforma',
+      'en-US': 'Cloud & Platform',
+    },
+    items: [
+      'Docker',
+      'Azure',
+      'AWS',
+    ],
   },
 ]
 
