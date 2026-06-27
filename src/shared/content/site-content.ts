@@ -5,12 +5,12 @@ export type LocalizedString = Record<Locale, string>
 type Resolve<T> = T extends LocalizedString
   ? string
   : T extends number | boolean | bigint | symbol
-    ? T
-    : T extends string
-      ? string
-      : T extends Array<infer U>
-        ? Array<Resolve<U>>
-        : { [K in keyof T]: Resolve<T[K]> }
+  ? T
+  : T extends string
+  ? string
+  : T extends Array<infer U>
+  ? Array<Resolve<U>>
+  : { [K in keyof T]: Resolve<T[K]> }
 
 export type AboutContentDefinition = {
   description: LocalizedString
@@ -122,13 +122,18 @@ export type SiteContent = {
 }
 
 const techFocus = [
-  'Java 21',
-  'Spring Boot',
-  'RabbitMQ',
-  'PostgreSQL',
-  'Docker',
-  'Azure',
-  'AWS',
+  'Software Architecture',
+  'System Design',
+  'Distributed Systems',
+  'Event-Driven Architecture',
+  'Microservices',
+  'System Integration',
+  'Backend Engineering',
+  'Java',
+  'Spring Ecosystem',
+  'Messaging Systems',
+  'Cloud Computing',
+  'DevOps Practices',
 ] as const
 
 const technicalStackDefinition: TechnicalStackGroupDefinition[] = [
@@ -296,9 +301,9 @@ const experiencesDefinition: ExperienceDefinition[] = [
     },
     summary: {
       'pt-BR':
-        'Atuação no desenvolvimento e evolução de sistemas financeiros distribuídos, com foco em arquitetura de software, integração entre serviços e construção de soluções orientadas a eventos para ambientes de alta criticidade.',
+        'Atuação no desenvolvimento e evolução de sistemas financeiros distribuídos, com foco em arquitetura de software, integração entre serviços e soluções orientadas a eventos.',
       'en-US':
-        'Working on the development and evolution of distributed financial systems, focused on software architecture, service integration, and event-driven solutions for mission-critical environments.',
+        'Development of distributed financial systems, focused on software architecture, service integration, and event-driven solutions.',
     },
     responsibilities: [
       {
@@ -341,9 +346,9 @@ const experiencesDefinition: ExperienceDefinition[] = [
     },
     summary: {
       'pt-BR':
-        'Atuação no desenvolvimento de soluções para logística e automação comercial, com foco em backend, integrações entre sistemas e evolução de plataformas corporativas.',
+        'Atuação no desenvolvimento de soluções para logística e automação, com foco em backend, integrações entre sistemas e evolução de plataformas corporativas.',
       'en-US':
-        'Work on solutions for logistics and commercial automation, focused on backend, system integrations, and evolution of corporate platforms.',
+        'Development of logistics and automation solutions, focused on backend, system integrations, and platform evolution.',
     },
     responsibilities: [
       {
@@ -378,20 +383,23 @@ const heroDefinition: HeroContentDefinition = {
   name: 'Rafael Sousa Pereira',
   role: {
     'pt-BR': 'Engenheiro Backend',
-    'en-US': 'Senior Backend Java Engineer',
+    'en-US': 'Senior Backend Engineer',
   },
+
   subtitle: {
     'pt-BR':
-      'Especializado em Java 21, Spring Boot e arquitetura de software.',
+      'Especializado em arquitetura de software, sistemas distribuídos e soluções orientadas a eventos.',
     'en-US':
       'Specialized in software architecture, distributed systems, and event-driven solutions.',
   },
+
   summary: {
     'pt-BR':
-      'Desenvolvo plataformas backend para sistemas financeiros e tecnologia de varejo, com foco em microservices, mensageria (RabbitMQ), integrações de sistemas e arquiteturas distribuídas.',
+      'Experiência no desenvolvimento e evolução de plataformas corporativas para os setores financeiro, logístico e varejista, atuando no desenho de arquiteturas distribuídas, integrações entre sistemas e soluções escaláveis para ambientes de missão crítica.',
     'en-US':
-      'Experience building and evolving corporate platforms for the financial, logistics, and retail sectors — designing scalable solutions, critical integrations, and high-availability services for mission-critical environments.',
+      'Experience building and evolving corporate platforms across financial, logistics, and retail sectors, designing distributed architectures, system integrations, and scalable solutions for mission-critical environments.',
   },
+
   currentCompany: {
     name: 'Capgemini',
     period: {
@@ -400,11 +408,12 @@ const heroDefinition: HeroContentDefinition = {
     },
     summary: {
       'pt-BR':
-        'Desenvolvimento de soluções financeiras, REST APIs e microservices com Java 21, Spring Boot e RabbitMQ.',
+        'Atuação no desenvolvimento de sistemas financeiros distribuídos, com foco em arquitetura de software, integração entre serviços e soluções orientadas a eventos.',
       'en-US':
-        'Development of financial solutions, distributed architectures, corporate integrations, and event-driven flows focused on scalability, resilience, and operational reliability.',
+        'Working on distributed financial systems, focused on software architecture, service integration, and event-driven solutions.',
     },
   },
+
   previousCompany: {
     name: 'Mobiis',
     period: {
@@ -413,20 +422,21 @@ const heroDefinition: HeroContentDefinition = {
     },
     summary: {
       'pt-BR':
-        'Soluções de logística e automação com Java, integrações distribuídas e foco em confiabilidade operacional.',
+        'Atuação em soluções de logística e automação, com foco em integração entre sistemas, backend e evolução de plataformas corporativas.',
       'en-US':
-        'Solutions for logistics and commercial automation, with focus on backend, system integrations, and evolution of corporate platforms.',
+        'Work on logistics and automation solutions, focused on system integration, backend development, and platform evolution.',
     },
   },
+
   focus: [...techFocus],
 }
 
 const aboutDefinition: AboutContentDefinition = {
   description: {
     'pt-BR':
-      'Engenheiro de Software com foco em desenvolvimento backend, arquitetura de software e sistemas distribuídos. Experiência na construção de plataformas corporativas, integrações entre sistemas e soluções orientadas a eventos para os setores financeiro, logístico e varejista, com ênfase em escalabilidade, resiliência e confiabilidade operacional.',
+      'Engenheiro de Software com foco em arquitetura de software, sistemas distribuídos e desenvolvimento backend. Experiência na construção de plataformas corporativas, integrações entre sistemas e soluções orientadas a eventos para ambientes de alta criticidade nos setores financeiro, logístico e varejista.',
     'en-US':
-      'Software engineer focused on backend development, software architecture, and distributed systems. Experience building corporate platforms, system integrations, and event-driven solutions for the financial, logistics, and retail sectors, with an emphasis on scalability, resilience, and operational reliability.',
+      'Software Engineer focused on software architecture, distributed systems, and backend development. Experience building corporate platforms, system integrations, and event-driven solutions for mission-critical environments across financial, logistics, and retail sectors.',
   },
 }
 
@@ -437,18 +447,28 @@ const seoDefinition: SeoContentDefinition = {
   },
   description: {
     'pt-BR':
-      'Engenheiro Backend — Java 21, Spring Boot, RabbitMQ, PostgreSQL, Docker e Azure. Foco em integrações entre sistemas e arquiteturas distribuídas para soluções financeiras e varejo.',
+      'Engenheiro Backend — Java, Spring Boot e sistemas distribuídos. Foco em arquitetura de software, integrações entre sistemas e soluções escaláveis para ambientes corporativos.',
     'en-US':
-      'Senior Backend Engineer — Java 21, Spring Boot, RabbitMQ, PostgreSQL, Docker and Azure. Focused on system integrations and distributed architectures for financial and retail solutions.',
+      'Senior Backend Engineer — Java, Spring Boot and distributed systems. Focus on software architecture, system integrations, and scalable enterprise solutions.',
   },
   keywords: [
     'Rafael Sousa Pereira',
     'Senior Backend Engineer',
-    'Java 21',
+    'Backend Engineer',
+    'Software Engineer',
+    'Software Architecture',
+    'Distributed Systems',
+    'System Design',
+    'Event-Driven Architecture',
+    'Microservices',
+    'System Integration',
+    'Java',
     'Spring Boot',
+    'Apache Kafka',
     'RabbitMQ',
     'PostgreSQL',
     'Docker',
+    'Cloud Computing',
     'Azure',
     'AWS',
   ],
