@@ -382,8 +382,8 @@ const experiencesDefinition: ExperienceDefinition[] = [
 const heroDefinition: HeroContentDefinition = {
   name: 'Rafael Sousa Pereira',
   role: {
-    'pt-BR': 'Engenheiro Backend',
-    'en-US': 'Senior Backend Engineer',
+    'pt-BR': 'Engenheiro de Software Backend Sênior',
+    'en-US': 'Senior Backend Software Engineer',
   },
 
   subtitle: {
@@ -442,19 +442,19 @@ const aboutDefinition: AboutContentDefinition = {
 
 const seoDefinition: SeoContentDefinition = {
   title: {
-    'pt-BR': 'Rafael Sousa Pereira | Engenheiro Backend',
-    'en-US': 'Rafael Sousa Pereira | Senior Backend Engineer',
+    'pt-BR': 'Rafael Sousa Pereira | Engenheiro de Software Backend Sênior',
+    'en-US': 'Rafael Sousa Pereira | Senior Backend Software Engineer',
   },
   description: {
     'pt-BR':
-      'Engenheiro Backend — Java, Spring Boot e sistemas distribuídos. Foco em arquitetura de software, integrações entre sistemas e soluções escaláveis para ambientes corporativos.',
+      'Engenheiro de Software Backend Sênior — Java, Spring Boot e sistemas distribuídos. Foco em arquitetura de software, integrações entre sistemas e soluções escaláveis para ambientes corporativos.',
     'en-US':
-      'Senior Backend Engineer — Java, Spring Boot and distributed systems. Focus on software architecture, system integrations, and scalable enterprise solutions.',
+      'Senior Backend Software Engineer — Java, Spring Boot and distributed systems. Focus on software architecture, system integrations, and scalable enterprise solutions.',
   },
   keywords: [
     'Rafael Sousa Pereira',
-    'Senior Backend Engineer',
-    'Backend Engineer',
+    'Senior Backend Software Engineer',
+    'Backend Software Engineer',
     'Software Engineer',
     'Software Architecture',
     'Distributed Systems',
