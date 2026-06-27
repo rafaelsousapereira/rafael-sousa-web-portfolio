@@ -3,7 +3,7 @@ export type Experience = {
   company: string
   role: string
   startYear: number
-  endYear?: number | 'Present'
+  endYear?: string
   summary?: string
   responsibilities?: string[]
 }

@@ -61,7 +61,7 @@ npm start
 
 `next start` não se aplica aqui: o projeto usa `output: 'export'` em `next.config.mjs`.
 
-6. Este projeto está hospedado na [Vercel](https://vercel.com/) para ver o portifólio em ação online [clique aqui.](https://rafaelsousa.vercel.app/)
+6. Este projeto está hospedado na [Vercel](https://vercel.com/) para ver o portfólio em ação online [clique aqui.](https://rafaelsousa.vercel.app/)
 
 ## Contribuições
 

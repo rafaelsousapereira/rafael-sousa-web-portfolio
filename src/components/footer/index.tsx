@@ -1,33 +1,39 @@
+ 'use client'
+
 import { Github, Linkedin } from 'lucide-react'
-import { metadata } from '@/data/infoPages'
+import { getSiteContent } from '@/shared/content/site-content'
 import { ComponentProps } from 'react'
+import { useI18n } from '@/shared/providers/i18n-provider'
 
 type FooterComponentProps = ComponentProps<'nav'>
 
 const socialLinkClassName = 'nav-link-inactive p-2'
 
 const Footer = (props: FooterComponentProps) => {
+  const { locale, t } = useI18n()
+  const { person, socialMedia } = getSiteContent(locale)
+
   return (
     <footer>
       <nav {...props}>
         <div className="flex flex-col gap-3">
           <div className="flex justify-center">
             <a
-              href={metadata.socialMedia.url.linkedin}
+              href={socialMedia.url.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className={socialLinkClassName}
-              aria-label="LinkedIn"
+              aria-label={t.social.linkedin}
             >
               <Linkedin size={35} strokeWidth={1.5} absoluteStrokeWidth />
             </a>
 
             <a
-              href={metadata.socialMedia.url.github}
+              href={socialMedia.url.github}
               target="_blank"
               rel="noopener noreferrer"
               className={socialLinkClassName}
-              aria-label="GitHub"
+              aria-label={t.social.github}
             >
               <Github size={35} strokeWidth={1.5} absoluteStrokeWidth />
             </a>
@@ -38,11 +44,11 @@ const Footer = (props: FooterComponentProps) => {
             <span className="font-semibold text-foreground">
               {new Date().getFullYear()}
             </span>{' '}
-            - Desenvolvido por{' '}
+            - {t.footer.developedBy}{' '}
             <span className="font-semibold text-foreground underline decoration-primary/50 underline-offset-2">
-              Rafael
+              {person.shortName}
             </span>
-            . <br /> Todos os direitos reservados.
+            . <br /> {t.footer.rightsReserved}
           </p>
         </div>
       </nav>

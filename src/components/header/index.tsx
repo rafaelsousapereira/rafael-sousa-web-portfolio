@@ -3,9 +3,13 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import NavbarRoute from '@/components/navbar-routes'
+import LanguageSwitcher from '@/components/language-switcher'
+import ThemeToggle from '@/components/theme-toggle'
+import { useI18n } from '@/shared/providers/i18n-provider'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useI18n()
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -24,16 +28,23 @@ const Header = () => {
           <div className="page-container flex items-center justify-between gap-3 py-4">
             <NavbarRoute className="flex max-lg:hidden" />
 
-            <button
-              type="button"
-              className="lg:hidden"
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-navigation"
-              aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <Menu className="size-9" />
-            </button>
+            <div className="flex items-center gap-2">
+              <div className="hidden items-center gap-2 lg:flex">
+                <ThemeToggle />
+                <LanguageSwitcher />
+              </div>
+
+              <button
+                type="button"
+                className="lg:hidden"
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-navigation"
+                aria-label={isMenuOpen ? t.header.closeMenu : t.header.openMenu}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
+                <Menu className="size-9" />
+              </button>
+            </div>
           </div>
         </nav>
       </header>
@@ -46,11 +57,16 @@ const Header = () => {
           <button
             type="button"
             className="page-container absolute top-4 left-0"
-            aria-label="Fechar menu"
+            aria-label={t.header.closeMenu}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <X className="size-9" />
           </button>
+
+          <div className="page-container absolute top-4 right-0 flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
+            <LanguageSwitcher />
+          </div>
 
           <NavbarRoute
             className="flex h-full flex-col items-center justify-center"
