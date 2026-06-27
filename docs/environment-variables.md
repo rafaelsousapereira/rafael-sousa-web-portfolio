@@ -21,15 +21,33 @@ All client-facing variables use the `NEXT_PUBLIC_` prefix and are embedded in th
 
 ## Vercel deployment
 
-Set the four `NEXT_PUBLIC_*` variables above in the Vercel project **Environment Variables** UI for Production (and Preview if needed).
+Set the four `NEXT_PUBLIC_*` variables directly in the Vercel project
+**Environment Variables** UI for Production (and Preview if needed):
 
-Alternatively, you may use these names; [`next.config.mjs`](../next.config.mjs) maps them at build time:
+| Variable |
+|----------|
+| `NEXT_PUBLIC_EMAILJS_USER_ID` |
+| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` |
+| `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` |
+| `NEXT_PUBLIC_GA_TRACKING` |
 
-| Vercel variable | Maps to |
-|-----------------|---------|
-| `NEXT_PUBLIC_VERCEL_ENV_EMAILJS_USER_ID` | `NEXT_PUBLIC_EMAILJS_USER_ID` |
-| `NEXT_PUBLIC_VERCEL_ENV_EMAILJS_SERVICE_ID` | `NEXT_PUBLIC_EMAILJS_SERVICE_ID` |
-| `NEXT_PUBLIC_VERCEL_ENV_EMAILJS_TEMPLATE_ID` | `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` |
+These are the names consumed by the app and are picked up automatically by
+Next.js at build time (any `NEXT_PUBLIC_*` variable is inlined into the
+browser bundle). Do **not** declare them in `next.config.mjs`'s `env` block
+— that would override the auto-inlining and force an empty value into the
+bundle.
+
+### Verifying the bundle
+
+After a deploy, confirm the values reached the browser bundle:
+
+```bash
+# build/ is the static export output directory (see next.config.mjs -> distDir)
+grep -ro "NEXT_PUBLIC_EMAILJS" build/static | head
+```
+
+If the keys are present, Next.js is inlining them correctly. If they appear as
+empty strings, check the Vercel project settings and trigger a new build.
 
 ## Security notes
 

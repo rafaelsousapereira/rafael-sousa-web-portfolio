@@ -5,6 +5,7 @@ import { Mulish } from 'next/font/google'
 import SiteHeader from '@/presentation/components/layout/site-header'
 import { cn } from '@/shared/lib/utils'
 import AppProviders from '@/shared/providers/app-providers'
+import ToastProvider from '@/shared/providers/toast-provider'
 import './globals.css'
 import { getSiteContent } from '@/shared/content/site-content'
 import { defaultLocale } from '@/shared/content/locales'
@@ -64,8 +65,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang={defaultLocale} suppressHydrationWarning className={cn('font-sans', mulish.variable)}>
       <body className="min-h-screen bg-background selection:bg-primary/40 selection:text-primary-foreground">
         <AppProviders>
-          <SiteHeader />
-          {children}
+          <ToastProvider>
+            <SiteHeader />
+            {children}
+          </ToastProvider>
         </AppProviders>
       </body>
     </html>

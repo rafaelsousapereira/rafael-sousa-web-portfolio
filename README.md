@@ -63,6 +63,16 @@ npm start
 
 6. Este projeto está hospedado na [Vercel](https://vercel.com/) para ver o portfólio em ação online [clique aqui.](https://rafaelsousa.vercel.app/)
 
+## Solução de problemas — formulário de contato
+
+O formulário usa [EmailJS](https://www.emailjs.com/) 100% no client (`output: 'export'`). Se um envio falhar, cheque nesta ordem:
+
+1. **Variáveis de ambiente**: confirme `NEXT_PUBLIC_EMAILJS_USER_ID`, `NEXT_PUBLIC_EMAILJS_SERVICE_ID` e `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` no painel da Vercel (Production) e em `.env.local`. Detalhes em [docs/environment-variables.md](docs/environment-variables.md).
+2. **Bundle estático**: rode `npm run build` e confira `grep -ro "NEXT_PUBLIC_EMAILJS" build/static` — se os IDs aparecerem vazios, faltam envs no build.
+3. **Domínio permitido no EmailJS**: no dashboard do EmailJS, em **Account → Security → Allowed Origins**, adicione o domínio de produção (ex.: `rafaelsousa.vercel.app`). Sem isso o EmailJS recusa a requisição e o toast de erro é exibido.
+4. **Console do navegador**: abra DevTools → Console e procure por `[contact-form] EmailJS env vars ausentes:` (config) ou `[contact-form] EmailJS error:` (falha de envio).
+5. **Limite mensal**: o plano gratuito do EmailJS tem cota limitada por mês. Se excedida, o toast de erro aparece sem detalhe no console.
+
 ## Contribuições
 
 Contribuições são bem-vindas! Se você tiver sugestões, correções de bugs ou melhorias para o projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.

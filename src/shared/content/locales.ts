@@ -62,6 +62,10 @@ export type TranslationDictionary = {
     submit: string
     success: string
     error: string
+    warning: {
+      configMissing: string
+      network: string
+    }
     recipientName: string
     validation: {
       nameMin: string
@@ -157,6 +161,11 @@ export const translations = {
       submit: 'Enviar mensagem',
       success: 'E-mail enviado com sucesso!',
       error: 'Erro ao enviar e-mail. Tente novamente.',
+      warning: {
+        configMissing:
+          'Formulário indisponível: variáveis de ambiente do EmailJS ausentes. Avise o administrador do site.',
+        network: 'Sem conexão de internet. Verifique sua rede e tente novamente.',
+      },
       recipientName: 'Rafael Sousa Pereira | Suporte',
       validation: {
         nameMin: 'Nome deve ter no mínimo 5 caracteres',
@@ -246,6 +255,11 @@ export const translations = {
       title: 'Contact',
       subtitle: 'Send me a message!',
       nameLabel: 'Type your name',
+      warning: {
+        configMissing:
+          'Form unavailable: EmailJS environment variables are missing. Please notify the site administrator.',
+        network: 'No internet connection. Check your network and try again.',
+      },
       emailLabel: 'Type your email',
       messageLabel: 'Type your message',
       submit: 'Send message',
