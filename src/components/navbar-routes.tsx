@@ -1,4 +1,4 @@
- 'use client'
+'use client'
 
 import { ComponentProps } from 'react'
 import { Contact, Home, User } from 'lucide-react'
@@ -12,8 +12,8 @@ const NavbarRoute = (props: NavbarRouteProps) => {
 
   const routes = [
     { url: '/', label: t.nav.home, icon: <Home /> },
-    { url: '/about', label: t.nav.about, icon: <User /> },
-    { url: '/contact', label: t.nav.contact, icon: <Contact /> },
+    { url: '/#about', label: t.nav.about, icon: <User /> },
+    { url: '/#contact', label: t.nav.contact, icon: <Contact /> },
   ]
 
   return (

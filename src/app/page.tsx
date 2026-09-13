@@ -6,11 +6,12 @@ import CertificationsSection from '@/presentation/components/sections/certificat
 import ProjectsSection from '@/presentation/components/sections/projects'
 import ArticlesSection from '@/presentation/components/sections/articles'
 import ContactSection from '@/presentation/components/sections/contact'
-import SiteFooter from '@/presentation/components/layout/site-footer'
+import Footer from '@/components/footer'
 import { getSiteContent } from '@/shared/content/site-content'
 import { defaultLocale } from '@/shared/content/locales'
+import { getSiteUrl } from '@/shared/lib/site-url'
 
-const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000')
+const siteUrl = getSiteUrl()
 
 // JSON-LD is rendered server-side for the default locale because schema.org
 // metadata lives inside the static HTML payload.
@@ -56,7 +57,7 @@ export default function HomePage() {
         <ContactSection />
       </main>
 
-      <SiteFooter />
+      <Footer />
     </div>
   )
 }

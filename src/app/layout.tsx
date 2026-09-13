@@ -2,20 +2,22 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { Mulish } from 'next/font/google'
-import SiteHeader from '@/presentation/components/layout/site-header'
+import Header from '@/components/header'
+import PlausibleProvider from '@/presentation/components/analytics/plausible-provider'
 import { cn } from '@/shared/lib/utils'
 import AppProviders from '@/shared/providers/app-providers'
 import ToastProvider from '@/shared/providers/toast-provider'
 import './globals.css'
 import { getSiteContent } from '@/shared/content/site-content'
 import { defaultLocale } from '@/shared/content/locales'
+import { getSiteUrl } from '@/shared/lib/site-url'
 
 const mulish = Mulish({
   subsets: ['latin'],
   variable: '--font-sans',
 })
 
-const metadataBase = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000')
+const metadataBase = getSiteUrl()
 
 // SEO metadata is generated for the default locale because Next.js Metadata
 // is static per route. The runtime locale toggle changes the visible content
@@ -65,8 +67,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang={defaultLocale} suppressHydrationWarning className={cn('font-sans', mulish.variable)}>
       <body className="min-h-screen bg-background selection:bg-primary/40 selection:text-primary-foreground">
         <AppProviders>
+          <PlausibleProvider />
           <ToastProvider>
-            <SiteHeader />
+            <Header />
             {children}
           </ToastProvider>
         </AppProviders>

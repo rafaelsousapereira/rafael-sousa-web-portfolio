@@ -2,7 +2,7 @@
 
 import { Monitor, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import { Button } from '@/presentation/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { useI18n } from '@/shared/providers/i18n-provider'
 
 const themeOptions = [

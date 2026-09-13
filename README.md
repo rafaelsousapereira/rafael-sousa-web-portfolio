@@ -3,79 +3,123 @@
 # Meu portfólio
 
 ## Sobre
-Seja bem-vindos(as), este é meu web site pessoal, desenvolvido com React, TypeScript e Tailwind CSS.
 
-## Tecnologias Utilizadas
+Site pessoal de Rafael Sousa Pereira, portfólio one-page com App Router,
+i18n próprio (pt-BR / en-US), tema claro/escuro e formulário de contato.
 
-Este projeto foi construído utilizando as seguintes tecnologias:
+## Stack atual
 
-- **TypeScript**: Uma linguagem de programação que é um superset de JavaScript, adicionando tipagem estática opcional.
-- **Next.js 15** (App Router) + **React 19**: Framework e UI (ver [docs/runtime-migration-notes.md](docs/runtime-migration-notes.md)).
-- **Lucide React**: Uma coleção de ícones SVG para uso em projetos React.
-- **Tailwind CSS v4** + **shadcn/ui**: Estilização e primitivos (ver [docs/ui-foundation.md](docs/ui-foundation.md)).
-- **ESLint**: Uma ferramenta de análise de código estática para identificar padrões problemáticos no código JavaScript.
+- **Next.js 15** App Router + **React 19** + **TypeScript**
+- **Tailwind CSS v4** + **shadcn/ui** (Base UI)
+- **React Hook Form** + **Zod**
+- **EmailJS** no client (compatível com `output: 'export'`)
+- **Plausible** (opcional, via `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`)
+- **Vitest** + **Testing Library**
+- i18n próprio em `src/shared/content` (não usa i18next)
 
-## Variáveis de ambiente
+## Arquitetura
 
-Copie `.env.example` para `.env.local` e preencha os valores. Detalhes em [docs/environment-variables.md](docs/environment-variables.md).
+Clean Architecture pragmática:
 
-| Variável | Uso |
-|----------|-----|
-| `NEXT_PUBLIC_EMAILJS_USER_ID` | Chave pública EmailJS (formulário de contato) |
-| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | ID do serviço EmailJS |
-| `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | ID do template EmailJS |
-| `NEXT_PUBLIC_GA_TRACKING` | ID de medição do Google Analytics |
+```text
+src/
+├── domain/            # entidades e funções puras
+├── application/       # contratos e casos de uso (contato, analytics)
+├── infrastructure/    # EmailJS e Plausible
+├── presentation/      # seções e UI do portfólio
+├── shared/            # conteúdo, i18n, tema, helpers
+├── components/        # header, footer, formulário, primitivos shadcn
+└── app/               # rotas Next.js
+```
 
-Arquivos `.env*` (exceto `.env.example`) não devem ser commitados.
+Dependências preferenciais: presentation → application → domain.
+Infraestrutura implementa contratos da application. O domínio não depende de
+React, Next.js ou EmailJS.
 
-## Desenvolvimento
+O deploy é **static export** (`output: 'export'`, pasta `build/`). Por isso o
+contato permanece no client via EmailJS, sem Route Handlers nem Resend.
 
-Para executar este projeto localmente, siga estas etapas:
-
-1. Clone este repositório em sua máquina local.
-2. Copie `.env.example` para `.env.local` e configure as variáveis.
-3. Instale as dependências usando npm ou yarn:
-   ```
-   npm install
-   ```
-   ou
-   ```
-   yarn
-   ```
-4. Execute o projeto em modo de desenvolvimento:
-   ```
-   npm run dev
-   ```
-   ou
-   ```
-   yarn dev
-   ```
-5. Abra [http://localhost:3000/](http://localhost:3000/) (modo desenvolvimento com `npm run dev`).
-
-**Preview da build de produção** (export estático em `build/`):
+## Comandos
 
 ```bash
+npm install
+npm run dev
+npm run lint
+npx tsc --noEmit
+npm test
+npm run test:coverage
 npm run build
 npm start
 ```
 
-`next start` não se aplica aqui: o projeto usa `output: 'export'` em `next.config.mjs`.
+`next start` não se aplica: o preview de produção usa `serve` na pasta `build/`.
 
-6. Este projeto está hospedado na [Vercel](https://vercel.com/) para ver o portfólio em ação online [clique aqui.](https://rafaelsousa.vercel.app/)
+## Testes e cobertura
 
-## Solução de problemas — formulário de contato
+- `npm test` executa Vitest uma vez.
+- `npm run test:coverage` gera relatório de cobertura (v8) dos comportamentos
+  críticos: schema de contato, formulário, Timeline, i18n, config EmailJS e
+  helpers de domínio.
 
-O formulário usa [EmailJS](https://www.emailjs.com/) 100% no client (`output: 'export'`). Se um envio falhar, cheque nesta ordem:
+## Variáveis de ambiente
 
-1. **Variáveis de ambiente**: confirme `NEXT_PUBLIC_EMAILJS_USER_ID`, `NEXT_PUBLIC_EMAILJS_SERVICE_ID` e `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` no painel da Vercel (Production) e em `.env.local`. Detalhes em [docs/environment-variables.md](docs/environment-variables.md).
-2. **Bundle estático**: rode `npm run build` e confira `grep -ro "NEXT_PUBLIC_EMAILJS" build/static` — se os IDs aparecerem vazios, faltam envs no build.
-3. **Domínio permitido no EmailJS**: no dashboard do EmailJS, em **Account → Security → Allowed Origins**, adicione o domínio de produção (ex.: `rafaelsousa.vercel.app`). Sem isso o EmailJS recusa a requisição e o toast de erro é exibido.
-4. **Console do navegador**: abra DevTools → Console e procure por `[contact-form] EmailJS env vars ausentes:` (config) ou `[contact-form] EmailJS error:` (falha de envio).
-5. **Limite mensal**: o plano gratuito do EmailJS tem cota limitada por mês. Se excedida, o toast de erro aparece sem detalhe no console.
+Copie `.env.example` para `.env.local`. Detalhes em
+[docs/environment-variables.md](docs/environment-variables.md).
+
+| Variável | Uso |
+|----------|-----|
+| `NEXT_PUBLIC_SITE_URL` | URL canônica (SEO, sitemap, robots). Na Vercel, cai para a URL da plataforma se estiver vazia |
+| `NEXT_PUBLIC_EMAILJS_USER_ID` | Identificador público EmailJS |
+| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | ID do serviço EmailJS |
+| `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | ID do template EmailJS |
+| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | Domínio Plausible (opcional) |
+
+Arquivos `.env*` (exceto `.env.example`) não devem ser commitados.
+
+## Contato
+
+O formulário valida **nome, e-mail, assunto e mensagem** com Zod e envia via
+`ContactService` → `EmailJsContactService`. A UI não chama EmailJS diretamente.
+
+Se um envio falhar, cheque nesta ordem:
+
+1. Variáveis `NEXT_PUBLIC_EMAILJS_*` em `.env.local` e no painel da Vercel.
+2. Bundle estático: `grep -ro "NEXT_PUBLIC_EMAILJS" build/static`.
+3. Origens permitidas no dashboard do EmailJS.
+4. Console do navegador para falhas de configuração ou envio.
+5. Cota mensal do plano EmailJS.
+
+## Analytics
+
+Plausible é carregado somente quando `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` está
+definido. Não há Google Analytics neste projeto.
+
+## i18n
+
+Locales: `pt-BR` (padrão) e `en-US`, com persistência em `localStorage`.
+Conteúdo e strings de UI vivem em `src/shared/content`.
+
+## Navegação
+
+A Home é a página única. O menu usa âncoras `/#about` e `/#contact`.
+`/about` e `/contact` apenas redirecionam para essas seções.
+
+## CI
+
+O workflow `.github/workflows/ci.yml` roda em push/PR: install, lint,
+typecheck, test, coverage e build.
+
+## Deploy
+
+Hospedado na [Vercel](https://vercel.com/). Site:
+[rafaelsousa.vercel.app](https://rafaelsousa.vercel.app/).
+
+Limitação do static export: não há backend neste repositório. Secrets privados
+não devem entrar no bundle.
 
 ## Contribuições
 
-Contribuições são bem-vindas! Se você tiver sugestões, correções de bugs ou melhorias para o projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+Contribuições são bem-vindas via issue ou pull request.
 
 ## Licença
 

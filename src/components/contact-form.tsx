@@ -1,42 +1,39 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { Send } from 'lucide-react'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'react-toastify'
-import emailjs from '@emailjs/browser'
+import type { ContactService } from '@/application/contact/contact-service'
+import {
+  createContactSchema,
+  toContactInput,
+  type ContactFormValues,
+} from '@/application/contact/contact-schema'
+import { sendContactMessage } from '@/application/contact/send-contact-message'
 import { useI18n } from '@/shared/providers/i18n-provider'
-import { getEmailJsConfig } from '@/shared/lib/emailjs-config'
-import { Button } from '@/presentation/components/ui/button'
-import { Input } from '@/presentation/components/ui/input'
-import { Label } from '@/presentation/components/ui/label'
-import { Textarea } from '@/presentation/components/ui/textarea'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
 
-const createContactFormSchema = (
-  validation: {
-    nameMin: string
-    nameMax: string
-    email: string
-    messageMin: string
-  },
-) =>
-  z.object({
-    name: z.string().min(5, validation.nameMin).max(50, validation.nameMax),
-    email: z.string().email(validation.email),
-    message: z.string().min(5, validation.messageMin),
-  })
+type ContactFormProps = {
+  contactService: ContactService
+}
 
-type SubmitEmailFormSchema = z.infer<ReturnType<typeof createContactFormSchema>>
+const emptyValues: ContactFormValues = {
+  email: '',
+  name: '',
+  subject: '',
+  message: '',
+}
 
-const ContactForm = () => {
+const ContactForm = ({ contactService }: ContactFormProps) => {
   const { t } = useI18n()
 
-  // Recreate the schema whenever the locale changes so localized Zod messages
-  // stay in sync with the rest of the UI.
   const submitEmailFormSchema = useMemo(
-    () => createContactFormSchema(t.contact.validation),
+    () => createContactSchema(t.contact.validation),
     [t.contact.validation],
   )
 
@@ -45,46 +42,49 @@ const ContactForm = () => {
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
-  } = useForm<SubmitEmailFormSchema>({
+    trigger,
+  } = useForm<ContactFormValues>({
     resolver: zodResolver(submitEmailFormSchema),
-    defaultValues: { email: '', name: '', message: '' },
+    defaultValues: emptyValues,
   })
 
-  const handleSendEmail = async (data: SubmitEmailFormSchema) => {
-    const { publicKey, serviceId, templateId, missingKeys } = getEmailJsConfig()
+  const hasFieldErrors = Object.keys(errors).length > 0
 
-    if (missingKeys.length > 0) {
+  useEffect(() => {
+    if (!hasFieldErrors) {
+      return
+    }
+
+    void trigger()
+  }, [hasFieldErrors, submitEmailFormSchema, trigger])
+
+  const handleSendEmail = async (data: ContactFormValues) => {
+    const result = await sendContactMessage(
+      contactService,
+      toContactInput(data),
+    )
+
+    if (result.ok) {
+      toast.success(t.contact.success)
+      reset(emptyValues)
+      return
+    }
+
+    if (result.reason === 'config_missing') {
       console.error(
-        `[contact-form] EmailJS env vars ausentes: ${missingKeys.join(', ')}. ` +
-          'Verifique .env.local ou as variáveis de ambiente da Vercel.',
+        '[contact-form] Contact service configuration is missing public identifiers.',
       )
       toast.warning(t.contact.warning.configMissing)
       return
     }
 
-    if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+    if (result.reason === 'network') {
       toast.warning(t.contact.warning.network)
       return
     }
 
-    const templateParams = {
-      from_name: data.name,
-      reply_to: data.email,
-      message: data.message,
-      to_name: t.contact.recipientName,
-    }
-
-    try {
-      await emailjs.send(serviceId, templateId, templateParams, { publicKey })
-      toast.success(t.contact.success)
-      reset({ email: '', name: '', message: '' })
-    } catch (error) {
-      const emailJsError = error as { text?: string; message?: string } | null
-      const message =
-        emailJsError?.text || emailJsError?.message || t.contact.error
-      console.error('[contact-form] EmailJS error:', error)
-      toast.error(message)
-    }
+    console.error('[contact-form] Contact send failed:', result.message)
+    toast.error(result.message || t.contact.error)
   }
 
   return (
@@ -143,6 +143,28 @@ const ContactForm = () => {
             </div>
 
             <div className="space-y-2">
+              <Label htmlFor="contact-subject">{t.contact.subjectLabel}</Label>
+              <Input
+                id="contact-subject"
+                type="text"
+                aria-invalid={errors.subject ? true : undefined}
+                aria-describedby={
+                  errors.subject ? 'contact-subject-error' : undefined
+                }
+                {...register('subject')}
+              />
+              {errors.subject && (
+                <p
+                  id="contact-subject-error"
+                  className="text-sm text-destructive"
+                  role="alert"
+                >
+                  {errors.subject.message}
+                </p>
+              )}
+            </div>
+
+            <div className="space-y-2">
               <Label htmlFor="contact-message">{t.contact.messageLabel}</Label>
               <Textarea
                 id="contact-message"
@@ -182,4 +204,3 @@ const ContactForm = () => {
 }
 
 export default ContactForm
-

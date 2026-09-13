@@ -3,11 +3,11 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import {
   defaultLocale,
-  locales,
   translations,
   type Locale,
   type TranslationDictionary,
 } from '@/shared/content/locales'
+import { resolveLocale, localeStorageKey } from '@/shared/content/locale-resolver'
 
 type I18nContextValue = {
   locale: Locale
@@ -15,25 +15,27 @@ type I18nContextValue = {
   t: TranslationDictionary
 }
 
-const storageKey = 'rafael-sousa-web-locale'
+const storageKey = localeStorageKey
 
 const I18nContext = createContext<I18nContextValue | null>(null)
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale)
+  const [hydrated, setHydrated] = useState(false)
 
   useEffect(() => {
-    const savedLocale = window.localStorage.getItem(storageKey)
-
-    if (savedLocale && locales.includes(savedLocale as Locale)) {
-      setLocaleState(savedLocale as Locale)
-    }
+    setLocaleState(resolveLocale(window.localStorage.getItem(storageKey)))
+    setHydrated(true)
   }, [])
 
   useEffect(() => {
+    if (!hydrated) {
+      return
+    }
+
     window.localStorage.setItem(storageKey, locale)
     document.documentElement.lang = locale
-  }, [locale])
+  }, [hydrated, locale])
 
   const value = useMemo<I18nContextValue>(
     () => ({

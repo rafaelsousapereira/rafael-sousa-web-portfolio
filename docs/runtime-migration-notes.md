@@ -6,7 +6,6 @@
 |---------|--------|-------|
 | `next` | ^14.2.5 | **15.5.9** |
 | `react` / `react-dom` | ^18.2.0 | **^19.0.0** |
-| `@next/third-parties` | ^14.2.5 | **15.5.9** (aligned with `next`) |
 | `eslint` | ^8.57.0 | **^9.0.0** |
 | `eslint-config-next` | 14.2.35 | **15.5.9** |
 | `@types/react` / `@types/react-dom` | ^18 | **^19** |
@@ -45,12 +44,13 @@ No routing, UI, or Tailwind changes in this phase.
 ```bash
 npm install
 npm run lint
+npx tsc --noEmit
+npm test
 npm run build
 npm start   # after build; serves static export in build/
 ```
 
 ## Out of scope (later phases)
 
-- App Router migration (remove React Router)
-- Tailwind CSS v4
-- UI / shadcn refresh
+- Further visual polish beyond the current design system
+- Backend contact (Resend) — blocked by `output: 'export'`

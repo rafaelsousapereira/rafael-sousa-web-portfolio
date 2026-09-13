@@ -11,7 +11,7 @@
 
 - Initialized via `npx shadcn@latest init` ([`components.json`](../components.json), style `base-nova`)
 - Components: `button`, `input`, `label`, `textarea` in [`src/components/ui/`](../src/components/ui/)
-- Utilities: [`src/lib/utils.ts`](../src/lib/utils.ts) (`cn()`)
+- Utilities: [`src/shared/lib/utils.ts`](../src/shared/lib/utils.ts) (`cn()`)
 - `shadcn` CLI package is a **devDependency** (theme tooling only; no runtime `tw-animate-css`)
 
 ## Layout & typography classes

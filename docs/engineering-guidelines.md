@@ -25,7 +25,6 @@ Mandatory:
 - TypeScript
 - Tailwind CSS v4
 - shadcn/ui
-- Framer Motion (minimal usage)
 
 Do NOT add:
 - Redux
@@ -37,6 +36,9 @@ Do NOT add:
 - Database
 - CMS
 - Heavy animation libraries
+- i18next (the project uses a custom locale dictionary)
+- Resend (incompatible with the current static export without a backend)
+- Google Analytics
 
 ## Design Principles
 
