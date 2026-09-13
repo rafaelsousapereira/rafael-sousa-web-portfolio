@@ -68,7 +68,7 @@ Copie `.env.example` para `.env.local`. Detalhes em
 
 | Variável | Uso |
 |----------|-----|
-| `NEXT_PUBLIC_SITE_URL` | URL canônica (SEO, sitemap, robots). Obrigatória em produção |
+| `NEXT_PUBLIC_SITE_URL` | URL canônica (SEO, sitemap, robots). Na Vercel, cai para a URL da plataforma se estiver vazia |
 | `NEXT_PUBLIC_EMAILJS_USER_ID` | Identificador público EmailJS |
 | `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | ID do serviço EmailJS |
 | `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | ID do template EmailJS |

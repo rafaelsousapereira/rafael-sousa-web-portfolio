@@ -17,15 +17,16 @@ frontend. Static export (`output: 'export'`) has no server-side secret store.
 These values identify the public EmailJS client. Restrict allowed origins and
 rate limits in the EmailJS dashboard.
 
-## Required for production SEO
+## Production SEO
 
 | Variable | Purpose |
 |----------|---------|
 | `NEXT_PUBLIC_SITE_URL` | Canonical site URL for metadata, sitemap, robots and JSON-LD |
 
-Required in production. If it is missing, the production build fails instead of
-emitting `http://localhost:3000` as the canonical URL. Local development falls
-back to `http://localhost:3000`.
+Preferred in production. Local development falls back to `http://localhost:3000`.
+On Vercel, if this variable is unset, the build uses
+`VERCEL_PROJECT_PRODUCTION_URL` or `VERCEL_URL` so canonical URLs are not
+localhost. A production build with none of those values fails.
 
 ## Optional
 
@@ -47,7 +48,8 @@ Only `.env.example` is tracked.
 
 Set the `NEXT_PUBLIC_*` variables in the Vercel project **Environment Variables**
 UI for Production (and Preview if needed). Next.js inlines them at build time.
-`NEXT_PUBLIC_SITE_URL` must be the live origin (no localhost).
+Set `NEXT_PUBLIC_SITE_URL` to the live origin when you have a custom domain;
+otherwise Vercel’s platform URLs are used at build time.
 
 Do **not** declare them in `next.config.mjs`'s `env` block — that would override
 auto-inlining and force empty values into the bundle.

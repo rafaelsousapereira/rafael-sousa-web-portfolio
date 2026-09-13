@@ -1,17 +1,35 @@
 const LOCAL_SITE_URL = 'http://localhost:3000'
 
+function toAbsoluteUrl(value: string): URL {
+  if (/^https?:\/\//i.test(value)) {
+    return new URL(value)
+  }
+
+  return new URL(`https://${value}`)
+}
+
 /**
  * Canonical site origin for metadata, sitemap, robots and JSON-LD.
  *
- * Reads `NEXT_PUBLIC_SITE_URL` with a literal key so Next.js can inline it.
- * Localhost is only used outside production. A production build without the
- * variable fails instead of emitting localhost canonical URLs.
+ * Prefers `NEXT_PUBLIC_SITE_URL` (literal key so Next.js can inline it).
+ * On Vercel, falls back to the platform deployment URLs so production
+ * builds do not emit localhost when the public variable is unset.
+ * Localhost is only used outside production.
  */
 export function getSiteUrl(): URL {
   const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim()
-
   if (configured) {
-    return new URL(configured)
+    return toAbsoluteUrl(configured)
+  }
+
+  const vercelProduction = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim()
+  if (vercelProduction) {
+    return toAbsoluteUrl(vercelProduction)
+  }
+
+  const vercelDeployment = process.env.VERCEL_URL?.trim()
+  if (vercelDeployment) {
+    return toAbsoluteUrl(vercelDeployment)
   }
 
   if (process.env.NODE_ENV === 'production') {
