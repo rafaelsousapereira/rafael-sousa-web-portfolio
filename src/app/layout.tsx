@@ -10,13 +10,14 @@ import ToastProvider from '@/shared/providers/toast-provider'
 import './globals.css'
 import { getSiteContent } from '@/shared/content/site-content'
 import { defaultLocale } from '@/shared/content/locales'
+import { getSiteUrl } from '@/shared/lib/site-url'
 
 const mulish = Mulish({
   subsets: ['latin'],
   variable: '--font-sans',
 })
 
-const metadataBase = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000')
+const metadataBase = getSiteUrl()
 
 // SEO metadata is generated for the default locale because Next.js Metadata
 // is static per route. The runtime locale toggle changes the visible content

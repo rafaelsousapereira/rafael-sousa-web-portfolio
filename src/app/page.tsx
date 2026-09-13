@@ -9,8 +9,9 @@ import ContactSection from '@/presentation/components/sections/contact'
 import Footer from '@/components/footer'
 import { getSiteContent } from '@/shared/content/site-content'
 import { defaultLocale } from '@/shared/content/locales'
+import { getSiteUrl } from '@/shared/lib/site-url'
 
-const siteUrl = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000')
+const siteUrl = getSiteUrl()
 
 // JSON-LD is rendered server-side for the default locale because schema.org
 // metadata lives inside the static HTML payload.

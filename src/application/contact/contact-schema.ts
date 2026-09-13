@@ -6,6 +6,7 @@ export type ContactValidationMessages = {
   nameMax: string
   email: string
   subjectMin: string
+  subjectMax: string
   messageMin: string
 }
 
@@ -13,7 +14,7 @@ export function createContactSchema(validation: ContactValidationMessages) {
   return z.object({
     name: z.string().trim().min(5, validation.nameMin).max(50, validation.nameMax),
     email: z.string().trim().email(validation.email),
-    subject: z.string().trim().min(3, validation.subjectMin).max(120),
+    subject: z.string().trim().min(3, validation.subjectMin).max(120, validation.subjectMax),
     message: z.string().trim().min(5, validation.messageMin),
   })
 }

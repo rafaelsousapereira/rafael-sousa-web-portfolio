@@ -6,6 +6,7 @@ const validation = {
   nameMax: 'name max',
   email: 'email invalid',
   subjectMin: 'subject min',
+  subjectMax: 'subject max',
   messageMin: 'message min',
 }
 
@@ -63,6 +64,17 @@ describe('createContactSchema', () => {
     expect(result.success).toBe(false)
     if (!result.success) {
       expect(result.error.flatten().fieldErrors.name?.[0]).toBe('name max')
+    }
+  })
+
+  it('enforces the subject max length with a localized message', () => {
+    const result = schema.safeParse({
+      ...validPayload,
+      subject: 'S'.repeat(121),
+    })
+    expect(result.success).toBe(false)
+    if (!result.success) {
+      expect(result.error.flatten().fieldErrors.subject?.[0]).toBe('subject max')
     }
   })
 })
