@@ -78,7 +78,7 @@ Internationalization
 
 Tasks:
 
-- Install i18next
+- Custom locale dictionaries (implemented; i18next was not added)
 - Create locales
 - Language switcher
 
@@ -96,7 +96,7 @@ Tasks:
 
 - React Hook Form
 - Zod
-- Resend
+- EmailJS via ContactService (static export; Resend was not added)
 - Error Handling
 - Success Handling
 

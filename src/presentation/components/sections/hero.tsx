@@ -5,7 +5,7 @@ import { getSiteContent } from '@/shared/content/site-content'
 import { useI18n } from '@/shared/providers/i18n-provider'
 import Container from '../ui/container'
 import Section from '../ui/section'
-import { buttonVariants } from '@/presentation/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/shared/lib/utils'
 
 export default function Hero() {

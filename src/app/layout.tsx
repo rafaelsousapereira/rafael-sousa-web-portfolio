@@ -2,7 +2,8 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { Mulish } from 'next/font/google'
-import SiteHeader from '@/presentation/components/layout/site-header'
+import Header from '@/components/header'
+import PlausibleProvider from '@/presentation/components/analytics/plausible-provider'
 import { cn } from '@/shared/lib/utils'
 import AppProviders from '@/shared/providers/app-providers'
 import ToastProvider from '@/shared/providers/toast-provider'
@@ -65,8 +66,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang={defaultLocale} suppressHydrationWarning className={cn('font-sans', mulish.variable)}>
       <body className="min-h-screen bg-background selection:bg-primary/40 selection:text-primary-foreground">
         <AppProviders>
+          <PlausibleProvider />
           <ToastProvider>
-            <SiteHeader />
+            <Header />
             {children}
           </ToastProvider>
         </AppProviders>

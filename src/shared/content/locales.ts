@@ -58,6 +58,7 @@ export type TranslationDictionary = {
     subtitle: string
     nameLabel: string
     emailLabel: string
+    subjectLabel: string
     messageLabel: string
     submit: string
     success: string
@@ -71,6 +72,7 @@ export type TranslationDictionary = {
       nameMin: string
       nameMax: string
       email: string
+      subjectMin: string
       messageMin: string
     }
   }
@@ -157,6 +159,7 @@ export const translations = {
       subtitle: 'Me envie uma mensagem!',
       nameLabel: 'Digite seu nome',
       emailLabel: 'Digite seu e-mail',
+      subjectLabel: 'Digite o assunto',
       messageLabel: 'Digite sua mensagem',
       submit: 'Enviar mensagem',
       success: 'E-mail enviado com sucesso!',
@@ -171,6 +174,7 @@ export const translations = {
         nameMin: 'Nome deve ter no mínimo 5 caracteres',
         nameMax: 'Nome deve conter no máximo 50 caracteres',
         email: 'E-mail é obrigatório',
+        subjectMin: 'Assunto deve ter no mínimo 3 caracteres',
         messageMin: 'Mensagem deve conter no mínimo 5 caracteres',
       },
     },
@@ -261,6 +265,7 @@ export const translations = {
         network: 'No internet connection. Check your network and try again.',
       },
       emailLabel: 'Type your email',
+      subjectLabel: 'Type the subject',
       messageLabel: 'Type your message',
       submit: 'Send message',
       success: 'Email sent successfully!',
@@ -270,6 +275,7 @@ export const translations = {
         nameMin: 'Name must have at least 5 characters',
         nameMax: 'Name must have at most 50 characters',
         email: 'Email is required',
+        subjectMin: 'Subject must have at least 3 characters',
         messageMin: 'Message must have at least 5 characters',
       },
     },

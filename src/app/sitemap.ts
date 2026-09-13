@@ -14,17 +14,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    {
-      url: new URL('/about', siteUrl).toString(),
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: new URL('/contact', siteUrl).toString(),
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
   ]
 }

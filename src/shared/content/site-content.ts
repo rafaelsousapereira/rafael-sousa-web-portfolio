@@ -1,3 +1,4 @@
+import type { Experience } from '@/domain/entities/experience'
 import type { Locale } from '@/shared/content/locales'
 
 export type LocalizedString = Record<Locale, string>
@@ -104,9 +105,7 @@ export type TechnicalStackGroup = Resolve<TechnicalStackGroupDefinition>
 export type Certification = Resolve<CertificationDefinition>
 export type SeoContent = Resolve<SeoContentDefinition>
 export type PersonContent = Resolve<PersonContentDefinition>
-export type Experience = Omit<Resolve<ExperienceDefinition>, 'endYear'> & {
-  endYear?: string
-}
+export type { Experience }
 
 export type SiteContent = {
   hero: HeroContent
@@ -545,7 +544,9 @@ const resolveAllForLocale = (locale: Locale): SiteContent => ({
     resolveLocalized(g, locale),
   ),
   certifications: [],
-  experiences: experiencesDefinition.map((e) => resolveLocalized(e, locale)),
+  experiences: experiencesDefinition.map((e) =>
+    resolveLocalized(e, locale),
+  ) as Experience[],
   projects: projectsDefinition.map((p) => resolveLocalized(p, locale)),
   articles: articlesDefinition.map((a) => resolveLocalized(a, locale)),
   seo: resolveLocalized(seoDefinition, locale),

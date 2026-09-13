@@ -2,6 +2,10 @@
 
 Audit date: 2026-06-07
 
+Updated: 2026-09-12 — the codebase now uses custom i18n, EmailJS behind
+`ContactService`, Plausible (optional), Home anchors, Vitest, and no
+`@next/third-parties`. Rows below remain the original Phase 1 snapshot.
+
 References: [01-product.md](./01-product.md), [02-architecture.md](./02-architecture.md), [03-execution-plan.md](./03-execution-plan.md)
 
 ---

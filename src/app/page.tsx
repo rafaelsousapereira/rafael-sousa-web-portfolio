@@ -6,7 +6,7 @@ import CertificationsSection from '@/presentation/components/sections/certificat
 import ProjectsSection from '@/presentation/components/sections/projects'
 import ArticlesSection from '@/presentation/components/sections/articles'
 import ContactSection from '@/presentation/components/sections/contact'
-import SiteFooter from '@/presentation/components/layout/site-footer'
+import Footer from '@/components/footer'
 import { getSiteContent } from '@/shared/content/site-content'
 import { defaultLocale } from '@/shared/content/locales'
 
@@ -56,7 +56,7 @@ export default function HomePage() {
         <ContactSection />
       </main>
 
-      <SiteFooter />
+      <Footer />
     </div>
   )
 }

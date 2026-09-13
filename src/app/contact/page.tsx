@@ -1,5 +1,14 @@
-import ContactForm from '@/components/contact-form'
+'use client'
+
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function ContactPage() {
-  return <ContactForm />
+  const router = useRouter()
+
+  useEffect(() => {
+    router.replace('/#contact')
+  }, [router])
+
+  return null
 }

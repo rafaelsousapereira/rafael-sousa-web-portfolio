@@ -8,6 +8,9 @@
  * `process.env.NEXT_PUBLIC_EMAILJS_USER_ID`). Dynamic lookups
  * (`process.env[someKey]`) are NOT inlined by webpack's `DefinePlugin` and
  * resolve to `undefined` in the browser.
+ *
+ * These values are public identifiers, not private secrets. Never put a
+ * private EmailJS key in the frontend bundle.
  */
 
 export type EmailJsConfig = {
@@ -18,7 +21,6 @@ export type EmailJsConfig = {
 }
 
 export const getEmailJsConfig = (): EmailJsConfig => {
-  // Static lookups — must remain literal so Next.js inlines them.
   const publicKey = process.env.NEXT_PUBLIC_EMAILJS_USER_ID ?? ''
   const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? ''
   const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? ''

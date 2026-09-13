@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@/presentation/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { locales, type Locale } from '@/shared/content/locales'
 import { useI18n } from '@/shared/providers/i18n-provider'
 

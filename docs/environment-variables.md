@@ -1,56 +1,58 @@
 # Environment variables
 
-All client-facing variables use the `NEXT_PUBLIC_` prefix and are embedded in the production bundle. Do not put private secrets in these variables.
+All client-facing variables use the `NEXT_PUBLIC_` prefix and are embedded in
+the production bundle. Treat them as public identifiers, not private secrets.
 
-## Required variables
+Never put a private API key, SMTP credential, or EmailJS private key in this
+frontend. Static export (`output: 'export'`) has no server-side secret store.
+
+## Required for the contact form
 
 | Variable | Purpose |
 |----------|---------|
-| `NEXT_PUBLIC_EMAILJS_USER_ID` | EmailJS public key for the contact form |
+| `NEXT_PUBLIC_EMAILJS_USER_ID` | EmailJS public key |
 | `NEXT_PUBLIC_EMAILJS_SERVICE_ID` | EmailJS service ID |
 | `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` | EmailJS template ID |
-| `NEXT_PUBLIC_GA_TRACKING` | Google Analytics measurement ID (e.g. `G-XXXXXXXX`) |
+
+These values identify the public EmailJS client. Restrict allowed origins and
+rate limits in the EmailJS dashboard.
+
+## Optional
+
+| Variable | Purpose |
+|----------|---------|
+| `NEXT_PUBLIC_SITE_URL` | Canonical site URL for metadata, sitemap and robots |
+| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | Plausible site domain. If empty, analytics is not loaded |
 
 ## Local development
 
-1. Copy [`.env.example`](../.env.example) to `.env.local` (or `.env.development`).
-2. Fill in values from your [EmailJS](https://www.emailjs.com/) and [Google Analytics](https://analytics.google.com/) accounts.
-3. Restart the dev server after changing env files.
+1. Copy [`.env.example`](../.env.example) to `.env.local`.
+2. Fill in EmailJS public identifiers from your EmailJS account.
+3. Optionally set `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` to your Plausible domain.
+4. Restart the dev server after changing env files.
 
-`.env`, `.env.local`, `.env.development`, and `.env.production` are gitignored. Only `.env.example` is tracked.
+`.env`, `.env.local`, `.env.development`, and `.env.production` are gitignored.
+Only `.env.example` is tracked.
 
 ## Vercel deployment
 
-Set the four `NEXT_PUBLIC_*` variables directly in the Vercel project
-**Environment Variables** UI for Production (and Preview if needed):
+Set the `NEXT_PUBLIC_*` variables in the Vercel project **Environment Variables**
+UI for Production (and Preview if needed). Next.js inlines them at build time.
 
-| Variable |
-|----------|
-| `NEXT_PUBLIC_EMAILJS_USER_ID` |
-| `NEXT_PUBLIC_EMAILJS_SERVICE_ID` |
-| `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` |
-| `NEXT_PUBLIC_GA_TRACKING` |
-
-These are the names consumed by the app and are picked up automatically by
-Next.js at build time (any `NEXT_PUBLIC_*` variable is inlined into the
-browser bundle). Do **not** declare them in `next.config.mjs`'s `env` block
-— that would override the auto-inlining and force an empty value into the
-bundle.
+Do **not** declare them in `next.config.mjs`'s `env` block — that would override
+auto-inlining and force empty values into the bundle.
 
 ### Verifying the bundle
 
-After a deploy, confirm the values reached the browser bundle:
-
 ```bash
-# build/ is the static export output directory (see next.config.mjs -> distDir)
 grep -ro "NEXT_PUBLIC_EMAILJS" build/static | head
 ```
 
-If the keys are present, Next.js is inlining them correctly. If they appear as
-empty strings, check the Vercel project settings and trigger a new build.
+If the keys are present, Next.js is inlining them. If they appear as empty
+strings, check the hosting environment and trigger a new build.
 
 ## Security notes
 
 - Rotate keys if they were ever committed to git.
 - In EmailJS, enable domain restrictions and rate limiting.
-- Never log form submissions or API responses in the browser console in production.
+- Never log form submissions in production.
